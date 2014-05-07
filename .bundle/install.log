@@ -1,0 +1,18 @@
+# Logfile created on 2014-05-07 17:17:22 -0600 by logger.rb/36483
+I, [2014-05-07T17:17:22.371844 #10026]  INFO -- : 0:  i18n (0.6.9) from /Users/erich/.rvm/gems/ruby-2.0.0-p247/specifications/i18n-0.6.9.gemspec
+I, [2014-05-07T17:17:23.064060 #10026]  INFO -- : 0:  multi_json (1.10.0) from /Users/erich/.rvm/gems/ruby-2.0.0-p247/specifications/multi_json-1.10.0.gemspec
+I, [2014-05-07T17:17:24.101840 #10026]  INFO -- : 0:  activesupport (3.2.18) from /Users/erich/.rvm/gems/ruby-2.0.0-p247/specifications/activesupport-3.2.18.gemspec
+I, [2014-05-07T17:17:24.102251 #10026]  INFO -- : 0:  builder (3.0.4) from /Users/erich/.rvm/gems/ruby-2.0.0-p247/specifications/builder-3.0.4.gemspec
+I, [2014-05-07T17:17:24.795839 #10026]  INFO -- : 0:  activemodel (3.2.18) from /Users/erich/.rvm/gems/ruby-2.0.0-p247/specifications/activemodel-3.2.18.gemspec
+I, [2014-05-07T17:17:24.796335 #10026]  INFO -- : 0:  bson (1.10.0) from /Users/erich/.rvm/gems/ruby-2.0.0-p247/specifications/bson-1.10.0.gemspec
+I, [2014-05-07T17:17:24.796647 #10026]  INFO -- : 0:  bson_ext (1.10.0) from /Users/erich/.rvm/gems/ruby-2.0.0-p247/specifications/bson_ext-1.10.0.gemspec
+I, [2014-05-07T17:17:24.796944 #10026]  INFO -- : 0:  json (1.8.1) from /Users/erich/.rvm/gems/ruby-2.0.0-p247/specifications/json-1.8.1.gemspec
+I, [2014-05-07T17:17:25.460746 #10026]  INFO -- : 0:  moped (1.5.2) from /Users/erich/.rvm/gems/ruby-2.0.0-p247/specifications/moped-1.5.2.gemspec
+I, [2014-05-07T17:17:25.461172 #10026]  INFO -- : 0:  origin (1.1.0) from /Users/erich/.rvm/gems/ruby-2.0.0-p247/specifications/origin-1.1.0.gemspec
+I, [2014-05-07T17:17:25.461503 #10026]  INFO -- : 0:  tzinfo (0.3.39) from /Users/erich/.rvm/gems/ruby-2.0.0-p247/specifications/tzinfo-0.3.39.gemspec
+I, [2014-05-07T17:17:25.461794 #10026]  INFO -- : 0:  mongoid (3.1.6) from /Users/erich/.rvm/gems/ruby-2.0.0-p247/specifications/mongoid-3.1.6.gemspec
+I, [2014-05-07T17:17:25.462079 #10026]  INFO -- : 0:  rack (1.5.2) from /Users/erich/.rvm/gems/ruby-2.0.0-p247/specifications/rack-1.5.2.gemspec
+I, [2014-05-07T17:17:26.110195 #10026]  INFO -- : 0:  rack-protection (1.5.3) from /Users/erich/.rvm/gems/ruby-2.0.0-p247/specifications/rack-protection-1.5.3.gemspec
+I, [2014-05-07T17:17:26.110589 #10026]  INFO -- : 0:  tilt (1.4.1) from /Users/erich/.rvm/gems/ruby-2.0.0-p247/specifications/tilt-1.4.1.gemspec
+I, [2014-05-07T17:17:27.122060 #10026]  INFO -- : 0:  sinatra (1.4.5) from /Users/erich/.rvm/gems/ruby-2.0.0-p247/specifications/sinatra-1.4.5.gemspec
+I, [2014-05-07T17:17:27.122487 #10026]  INFO -- : 0:  bundler (1.5.1) from /Users/erich/.rvm/gems/ruby-2.0.0-p247/specifications/bundler-1.5.1.gemspec
