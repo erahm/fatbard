@@ -2,3 +2,5 @@
 Gemfile.lock
 
 .bundle/install.log
+
+.sass-cache*
