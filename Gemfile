@@ -16,4 +16,5 @@ group :test do
     #Auto run the test suite
     gem "ZenTest"
     gem "autotest-fsevent"
+    gem "autotest-growl"
 end
