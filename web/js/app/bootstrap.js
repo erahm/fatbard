@@ -16,6 +16,9 @@ requirejs.config({
     },
     "config":{
         "config":{
+            "application":{
+                "name": "Fatbard"
+            },
             "routers":[
                 "error",
                 "login"

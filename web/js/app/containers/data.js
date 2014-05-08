@@ -2,7 +2,7 @@ define(
     ["storage", "moment"],
     function( Storage, moment ){
         var Data = function(){},
-            base = "window.omakase.data";
+            base = "window.fatbard.data";
 
         Data.prototype = new Storage();
 

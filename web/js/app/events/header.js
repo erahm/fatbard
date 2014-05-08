@@ -8,7 +8,7 @@ define(
         };
 
         HeaderEvents.prototype.registerHeaderEvents = function(){
-            $( document ).on( "omakase.click.header.logo", function( e ){
+            $( document ).on( "fatbard.click.header.logo", function( e ){
                 window.location = "/#/";
             });
         };

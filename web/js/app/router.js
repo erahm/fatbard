@@ -2,7 +2,7 @@ define(
     ["require", "module", "sammy", "underscore", "render", "components/header", "security"],
     function( require, module, Sammy, _, Render, Header, Security ){
         var Router = {},
-            routes = window.omakase.config.routers,
+            routes = window.fatbard.config.routers,
             app = new Sammy(),
             routerCount = 0;
 
@@ -11,7 +11,7 @@ define(
             var tmpl = new Render( "content/template.html" ),
                 head = new Header();
 
-            $( document ).on( "omakase.core.routing.load.done", function(){
+            $( document ).on( "fatbard.core.routing.load.done", function(){
                 app.run( '#/' );
             });
 
@@ -48,7 +48,7 @@ define(
                         routerCount++;
 
                         if( routerCount === _( routes ).size() ){
-                            $( document ).trigger( "omakase.core.routing.load.done" );
+                            $( document ).trigger( "fatbard.core.routing.load.done" );
                         }
                     }
                 );
