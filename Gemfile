@@ -5,6 +5,7 @@ gem "sinatra"
 gem "json"
 gem "mongoid"
 gem "bson_ext"
+gem "sass"
 
 group :test do
     #RSpec for unit tests
