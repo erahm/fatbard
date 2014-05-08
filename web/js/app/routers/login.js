@@ -31,6 +31,10 @@ define(
             data.sammy.get( "#/", function( context ){
                 page.home( data );
             });
+
+            data.sammy.get( "#/login/enroll", function( context ){
+                page.enroll( data );
+            });
         };
 
         return Login;
