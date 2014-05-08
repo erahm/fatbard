@@ -5,13 +5,10 @@ class UserController
     def createUser (params)
         user = User.new
 
-        params.each {
-            |param|
+        params.each do |param|
             if param.empty?
-                raise 'Parameter is empty'
+                raise "Parameter is empty"
             end
-        }
-
+        end
      end
-
 end
