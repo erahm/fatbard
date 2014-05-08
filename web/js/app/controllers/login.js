@@ -20,6 +20,19 @@ define(
             });
         };
 
+        Login.prototype.enroll = function( data ){
+            this.data = data;
+
+            this.render({
+                "title": "Create Your Account",
+                "node": this.root,
+                "mechanism": "output",
+                "template": "content/login/enroll.html",
+                "data": {},
+                "bind": Bindings.enroll
+            });
+        };
+
         return Login;
     }
 );
