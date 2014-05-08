@@ -1,0 +1,33 @@
+{
+  "name": "fatbard",
+  "version": "0.0.0",
+  "homepage": "https://github.com/erahm/fatbard",
+  "authors": [
+    "rockerest <admin@rockerest.com>",
+    "erahm <erahm84@gmail.com>"
+  ],
+  "description": "A campaign and character management tool for the Pathfinder RPG",
+  "main": "index.html",
+  "keywords": [
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendor/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "underscore": "~1.6.0",
+    "require": "requirejs#~2.1.11",
+    "sammy": "~0.7.5",
+    "jquery": "~2.1.0",
+    "font-awesome": "~4.0.3",
+    "moment": "~2.5.1",
+    "cookies-js": "~0.3.1",
+    "cookies": "cookies-js#~0.3.1"
+  }
+}

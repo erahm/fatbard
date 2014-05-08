@@ -1,0 +1,10 @@
+@mixin no-focus-outline(){
+    &:focus{
+        outline: none;
+    }
+
+    &::-moz-focus-inner{
+        border: 0;
+        outline: none;
+    }
+}
