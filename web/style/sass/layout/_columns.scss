@@ -1,0 +1,16 @@
+.columns{
+    @extend .clear;
+}
+
+.column{
+    float: left;
+    padding: .25em
+}
+
+@for $i from 1 through 10{
+    .col-#{$i}{
+        width: 100% / $i;
+    }
+}
+
+

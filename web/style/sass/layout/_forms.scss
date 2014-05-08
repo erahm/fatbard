@@ -1,0 +1,23 @@
+form{
+    width: 100%;
+}
+
+input{
+    width: 100%;
+
+    line-height: 1.4em;
+    font-size: 1.4em;
+
+    margin-bottom: 0.25em;
+    margin-top: 0.15em;
+}
+
+label{
+    font-size: 1.75em;
+
+    + input{
+        margin-left: 0.75em;
+
+        width: 96%;
+    }
+}

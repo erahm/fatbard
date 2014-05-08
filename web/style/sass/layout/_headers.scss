@@ -1,0 +1,37 @@
+header{
+    background-color: $highlightBackground;
+    padding: 1em;
+    margin: auto auto 1.5em;
+
+    h1, h2, h3, h4, h5, h6{
+        text-align: center;
+    }
+
+    img{
+        @include border-radius( 0.25em );
+
+        float: left;
+        margin: auto -6em auto 6em;
+    }
+}
+
+#logo-container{
+    @include border-radius( 0.25em );
+    padding: 0.5em 1em;
+    background-color: $darkBackground;
+
+    span, i{
+        vertical-align: middle;
+        display: inline-block;
+    }
+
+    cursor: pointer;
+    float: left;
+}
+
+#account-container{
+    @extend #logo-container;
+
+    float: right;
+    cursor: default;
+}

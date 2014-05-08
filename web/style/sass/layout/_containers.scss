@@ -1,0 +1,11 @@
+.more{
+    margin-left: 1.2em;
+}
+
+.issue{
+    background-color: transparentize( $error, 0.75 );
+
+    hr{
+        border-bottom: 1px solid $error;
+    }
+}
