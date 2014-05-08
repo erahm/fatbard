@@ -1,0 +1,13 @@
+<div id="logo-container">
+    <i class="fa fa-archive fa-2x"></i>
+    <span>&nbsp;&nbsp;Omakase</span>
+</div>
+<div id="account-container">
+<% if( typeof user !== "undefined" ){ %>
+    <!-- User stuff -->
+    <%= user.identity %> | <a href="#/logout/">Log Out</a>
+<% }
+else{ %>
+    Welcome!
+<% } %>
+</div>
