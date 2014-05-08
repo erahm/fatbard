@@ -2,7 +2,7 @@ define(
     ["storage"],
     function( Storage ){
         var Template = function(){},
-            base = "window.omakase.templates";
+            base = "window.fatbard.templates";
 
         Template.prototype = new Storage();
 

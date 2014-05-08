@@ -29,7 +29,7 @@ define(
         };
 
         Page.prototype.setTitle = function( title ){
-            var suffix = "Omakase";
+            var suffix = window.fatbard.config.application.name;
 
             if( !title ){
                 title = suffix;

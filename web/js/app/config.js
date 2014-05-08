@@ -3,8 +3,8 @@ define(
     function( module ){
         var Config = module.config();
 
-        window.omakase = window.omakase || {};
-        window.omakase.config = Config;
+        window.fatbard = window.fatbard || {};
+        window.fatbard.config = Config;
 
         return Config;
     }

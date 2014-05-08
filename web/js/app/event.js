@@ -2,7 +2,7 @@ define(
     ["require", "underscore"],
     function( require, _ ){
         var Events = {},
-            e = window.omakase.config.events;
+            e = window.fatbard.config.events;
 
         Events.startup = function(){
             Events.watch();
