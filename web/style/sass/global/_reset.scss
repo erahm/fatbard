@@ -133,8 +133,8 @@ html,
 body{
     height: 100%;
     width: 100%;
-    background-color: $mainBackground;
-    color: $text;
+    background-color: $default;
+    color: $text-standard;
 }
 
 .clear:before,

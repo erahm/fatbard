@@ -1,12 +1,24 @@
-$darkBackground:        #316313;
-$highlightBackground:   #478D1C;
-$mainBackground:        #EFEFEF;
-$readingBackground:     #FFFFFF;
+$primary:           hsl( 334.49930, 100, 36.27451);                         /* #B9004E */
+$primary-dull:      darken( desaturate( $primary, 66.66666 ), 9.21569 );    /* #5C2E42 */
+$primary-dark:      darken( $primary, 25.4902 );                            /* #370017 */
+$primary-bright:    lighten( desaturate( $primary, 30.37975 ), 17.2549 );   /* #DB367C */
+$primary-pastel:    lighten( desaturate( $primary, 37.1134 ), 25.68627 );   /* #DB6195 */
 
-$darkText:      #DCDCDC;
-$highlightText: #FFFFFF;
-$text:          #333333;
-$readingText:   #000000;
+$complementary:         hsl( 86.038494, 100, 38.82353 );                                /* #70C600 */
+$complementary-dull:    darken( desaturate( $complementary, 66.21622 ), 9.80392 );      /* #4D6331 */
+$complementary-dark:    adjust-hue( darken( $complementary, 27.2549 ), -0.5 );          /* #223B00 */
+$complementary-bright:  lighten( desaturate( $complementary, 25.4386 ), 16.47059 );     /* #98E238 */
+$complementary-pastel:  lighten( desaturate( $complementary, 31.52174 ), 25.09804 );    /* #ABE264 */
+
+$reading: #FFFFFF;
+$default: #DEDEDE;
+$darker: darken( $default, 30 );
+$darkest: darken( $default, 75 );
+
+$text-on-dark:      #DCDCDC;
+$text-highlight:    #FFFFFF;
+$text-standard:     #333333;
+$text-on-white:     #000000;
 
 $struts:    #CCCCCC;
 

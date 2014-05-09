@@ -1,11 +1,11 @@
 header{
-    background-color: $highlightBackground;
+    background-color: $darker;
     padding: 1em;
     margin: auto auto 1.5em;
 
     h1, h2, h3, h4, h5, h6{
         text-align: center;
-        color: $highlightText;
+        color: $text-highlight;
     }
 
     img{
@@ -19,8 +19,8 @@ header{
 #logo-container{
     @include border-radius( 0.25em );
     padding: 0.5em 1em;
-    background-color: $darkBackground;
-    color: $darkText;
+    background-color: $primary-dull;
+    color: $text-on-dark;
 
     span, i{
         vertical-align: middle;

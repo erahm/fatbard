@@ -1,10 +1,10 @@
 section{
-    background-color: $readingBackground;
+    background-color: $reading;
     padding: 1em;
     margin: 1em auto 0;
     text-align: left;
     line-height: 1.5;
-    color: $readingText;
+    color: $text-on-white;
 
     @include border-radius( 0.4em );
 
