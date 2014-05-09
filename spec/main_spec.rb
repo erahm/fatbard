@@ -1,10 +1,12 @@
+ENV['RACK_ENV'] = 'test'
+
 require_relative '../main.rb'
+require_relative '../routes/api/Users.rb'
+require 'rspec'
 require 'rack/test'
 
-set :environment, :test
-
 def app
-    Sinatra::Application
+    Fatbard::Main
 end
 
 describe 'main' do
