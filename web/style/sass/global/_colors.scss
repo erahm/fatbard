@@ -11,6 +11,7 @@ $complementary-bright:  lighten( desaturate( $complementary, 25.4386 ), 16.47059
 $complementary-pastel:  lighten( desaturate( $complementary, 31.52174 ), 25.09804 );    /* #ABE264 */
 
 $reading: #FFFFFF;
+$lighter: #EFEFEF;
 $default: #DEDEDE;
 $darker: darken( $default, 30 );
 $darkest: darken( $default, 75 );

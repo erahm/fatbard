@@ -2,7 +2,7 @@ define(
     ["page"],
     function( Page ){
         var Error = function(){
-            this.root = "body div#main";
+            this.root = "body > article div#main";
         };
 
         Error.prototype = new Page();

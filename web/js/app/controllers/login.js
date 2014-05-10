@@ -2,7 +2,7 @@ define(
     ["page", "bindings/login"],
     function( Page, Bindings ){
         var Login = function(){
-            this.root = "body div#main";
+            this.root = "body > article div#main";
         };
 
         Login.prototype = new Page();

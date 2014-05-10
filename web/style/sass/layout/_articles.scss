@@ -1,4 +1,18 @@
 article{
-    width: 800px;
+    @include border-radius( 0.25em );
+
+    width: $application-width;
+    min-width: $application-min-width;
     margin: auto;
+    padding: 1em;
+
+    background-color: $lighter;
+
+    @include respond-to( small ){
+        width: 99%;
+    }
+
+    @include respond-to( medium ){
+        width: 99%
+    }
 }
