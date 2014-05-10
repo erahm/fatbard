@@ -1,24 +1,25 @@
-require_relative '../../controllers/UserController.rb'
+ENV['RACK_ENV'] = 'test'
 
-describe 'UserController' do
-    userController = UserController.new
+require 'spec_helper'
+require_relative '../../models/User.rb'
 
-    describe 'createUser' do
-        it "should raise exception if parameters are empty" do
+describe UserController do
+    include Rack::Test::Methods
+
+    before :each do
+        @userController = UserController.new
+    end
+
+    describe '#createUser' do
+
+        it 'should raise error if parameters are empty' do
             params = {}
-
-            userController.createUser(params)
-            expect { some_method }.to raise_error
+            lambda { @userController.createUser(params) }.should raise_exception ArgumentError
         end
 
-        it "should raise exception if username is empty" do
-            params = {:email => "email@email.com", :username => ""}
-
-            begin
-                userController.createUser(params)
-                expect { some_method }.to raise_error
-            rescue
-            end
+        it 'should raise error if username is empty' do
+            params = {:email => "email", :username => ""}
+            lambda { @userController.createUser(params) }.should raise_error
         end
     end
 end
