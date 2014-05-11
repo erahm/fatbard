@@ -8,11 +8,11 @@ article{
 
     background-color: $lighter;
 
-    @include respond-to( small ){
-        width: 99%;
+    @include respond-to( medium ){
+        width: 60%
     }
 
-    @include respond-to( medium ){
-        width: 99%
+    @include respond-to( small ){
+        width: 99%;
     }
 }
