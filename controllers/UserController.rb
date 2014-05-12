@@ -1,12 +1,9 @@
 require_relative '../models/User.rb'
 require 'pbkdf2'
+require 'openssl'
 
 class UserController
     attr_accessor :user
-
-    def initialize
-        @salt = '4rh35qvQ8r'
-    end
 
     def createUser ( params )
         if params.empty?
@@ -17,10 +14,12 @@ class UserController
                 if value.to_s.empty?
                     raise "Parameter #{key} is empty"
                 else
+                    generateSalt
                     assignValues(key, value)
                 end
             end
-            #@user.save
+            # for now we'll run this check. later i'll mock mongo in the specs
+            @user.save unless ENV['RACK_ENV'] == 'test'
         end
      end
 
@@ -38,8 +37,13 @@ class UserController
         end
      end
 
-     private
+     protected
      def hashPassword ( password )
-        return PBKDF2.new(:password => password, :salt => @salt, :iterations => 10000)
+        return PBKDF2.new(:password => password, :salt => @user.salt, :iterations => 10000)
+     end
+
+     protected
+     def generateSalt
+        @user.salt = OpenSSL::Random.random_bytes 128
      end
 end
