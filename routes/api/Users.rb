@@ -17,6 +17,9 @@ module Fatbard
                     rescue
                         halt 400
                     end
+
+                    user = userController.user
+                    halt 201, {:headerLocation => "/api/user/id/#{user._id}"}.to_json
                 end
 
                 def parseRequest (request)
@@ -25,6 +28,16 @@ module Fatbard
 
                 def validateParams (params)
                     halt 400 if params.length == 0
+                end
+
+                protected
+                def filterUser ( user )
+                    return {
+                        :_id => user['_id'],
+                        :username => user['username'],
+                        :email => user['email'],
+                        :firstName => user['firstName']
+                    }
                 end
             end
         end

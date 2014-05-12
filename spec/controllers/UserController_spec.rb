@@ -26,10 +26,9 @@ describe UserController do
             end
         end
 
-        context 'when username is not empty' do
-            it 'should assign value to username' do
+        context 'when username parameter is not empty' do
+            it 'should assign value to user.username' do
                 params = {:username => 'joebob'}
-                fakeUser = User.new()
 
                 @userController.instance_variable_set(:@user, User.new)
                 @userController.createUser(params)
