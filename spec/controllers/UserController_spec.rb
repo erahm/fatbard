@@ -12,14 +12,30 @@ describe UserController do
 
     describe '#createUser' do
 
-        it 'should raise error if parameters are empty' do
-            params = {}
-            lambda { @userController.createUser(params) }.should raise_exception ArgumentError
+        context 'when parameters are empty' do
+            it 'should raise error' do
+                params = {}
+                lambda { @userController.createUser(params) }.should raise_exception ArgumentError
+            end
         end
 
-        it 'should raise error if username is empty' do
-            params = {:email => "email", :username => ""}
-            lambda { @userController.createUser(params) }.should raise_error
+        context 'when a parameter is empty' do
+            it 'should raise error' do
+                params = {:email => "email", :username => ""}
+                lambda { @userController.createUser(params) }.should raise_error
+            end
+        end
+
+        context 'when username parameter is not empty' do
+            it 'should assign value to user.username' do
+                params = {:username => 'joebob'}
+
+                @userController.instance_variable_set(:@user, User.new)
+                @userController.createUser(params)
+
+                user = @userController.instance_variable_get(:@user)
+                user.username.should == params['username']
+            end
         end
     end
 end
