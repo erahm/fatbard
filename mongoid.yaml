@@ -1,7 +1,7 @@
 development:
 	sessions:
 		default:
-			database: demo
+			database: fatbard
 			hosts:
 			- localhost:27017
 production:
