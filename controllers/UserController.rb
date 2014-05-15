@@ -1,4 +1,5 @@
 require_relative '../models/User.rb'
+require 'active_support'
 require 'pbkdf2'
 require 'openssl'
 require 'mongoid'
@@ -26,7 +27,7 @@ class UserController
     end
 
     def retrieve ( username )
-        @user = User.where(:username => username)
+        @user = User.where(:username => username).first
         return @user
     end
 
@@ -55,7 +56,12 @@ class UserController
 
      protected
      def hashPassword ( password )
-        return PBKDF2.new(:password => password, :salt => @user.salt, :iterations => 10000)
+        return PBKDF2.new do |p|
+            p.password = password
+            p.salt = @user.salt
+            p.iterations = 10000
+            p.hash_function = OpenSSL::Digest::SHA512
+        end
      end
 
      protected

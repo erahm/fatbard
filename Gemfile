@@ -6,7 +6,7 @@ gem "json"
 gem "mongoid", ">=2.0.0.beta.17"
 gem "bson_ext"
 gem "sass"
-gem "pbkdf2"
+gem "pbkdf2-ruby"
 
 group :test do
     #RSpec for unit tests

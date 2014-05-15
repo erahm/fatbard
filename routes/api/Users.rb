@@ -32,10 +32,10 @@ module Fatbard
                     validateParams(params)
                     user = userController.retrieve(params[:username])
 
-                    if user.empty?
+                    if user == nil
                         halt 404
                     else
-                        halt 200, filterUser( user[0] ).to_json
+                        halt 200, filterUser( user ).to_json
                     end
                 end
 
