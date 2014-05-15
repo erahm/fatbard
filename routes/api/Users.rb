@@ -35,7 +35,7 @@ module Fatbard
                     if user.empty?
                         halt 404
                     else
-                        halt 200, user.to_json
+                        halt 200, filterUser( user[0] ).to_json
                     end
                 end
 
