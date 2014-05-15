@@ -1,3 +1,4 @@
+require 'json'
 require_relative '../../controllers/UserController.rb'
 
 module Fatbard
@@ -10,20 +11,21 @@ module Fatbard
 
                     userController = UserController.new
 
+                    requestData = parseRequest(request)
+                    validateParams(requestData)
+
                     begin
-                        requestData = parseRequest(request)
-                        validateParams(requestData)
                         userController.createUser(requestData)
-                    rescue
-                        halt 400
+                    rescue => error
+                        halt 400, error.to_s
                     end
 
                     user = userController.user
-                    halt 201, {:headerLocation => "/api/user/id/#{user._id}"}.to_json
+                    halt 201, {:headerLocation => "/api/user/username/#{user.username}"}.to_json
                 end
 
                 def parseRequest (request)
-                    return JSON.parse(request.body.string)
+                    return request.POST
                 end
 
                 def validateParams (params)

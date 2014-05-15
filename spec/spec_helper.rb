@@ -4,3 +4,4 @@ require_relative '../controllers/UserController.rb'
 
 require 'rspec'
 require 'rack/test'
+require 'mongoid'

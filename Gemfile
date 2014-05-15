@@ -3,7 +3,7 @@ ruby "2.1.1"
 
 gem "sinatra"
 gem "json"
-gem "mongoid"
+gem "mongoid", ">=2.0.0.beta.17"
 gem "bson_ext"
 gem "sass"
 gem "pbkdf2"

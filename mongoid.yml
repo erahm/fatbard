@@ -1,0 +1,16 @@
+development:
+    sessions:
+        default:
+            database: fatbard
+            hosts:
+            - localhost:27017
+test:
+    sessions:
+        default:
+            host: localhost
+            database: fatbard_test
+
+production:
+    sessions:
+        default:
+            uri: <%= ENV['MONGOHQ_URL'] %>
