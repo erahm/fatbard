@@ -9,7 +9,7 @@ define(
         };
 
         LoginEvents.prototype.registerHomeEvents = function(){
-            $( document ).on( "fatbard.click.login.home.authenticate", function( e ){
+            $( document ).on( "fatbard.click.login/home/authenticate", function( e ){
                 var clicked = e.target,
                     $clicked = $( clicked ),
                     credentials = {
