@@ -40,8 +40,7 @@ describe 'Users' do
                         :password => 'i like chicken'
                     }.to_json
 
-                    body = JSON.parse(last_response.body.string)
-                    body[:headerLocation].should_not be_empty
+                    last_response.headers['Location'].should == "/api/user/username"
                 end
             end
     end
