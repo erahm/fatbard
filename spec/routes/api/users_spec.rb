@@ -27,20 +27,20 @@ describe 'Users' do
                         :email => 'email@email.com',
                         :firstName => 'first name',
                         :password => 'i like chicken'
-                    }.to_json
+                    }
 
                     last_response.status.should == 201
                 end
 
                 it 'should return location header of user object' do
                     post '/api/user', {
-                        :username => 'username',
+                        :username => 'othername',
                         :email => 'email@email.com',
                         :firstName => 'first name',
                         :password => 'i like chicken'
-                    }.to_json
+                    }
 
-                    last_response.headers['Location'].should == "/api/user/username"
+                    last_response.headers['Location'].should == "/api/user/othername"
                 end
             end
     end
