@@ -16,7 +16,7 @@ module Fatbard
                     isAuthed = userController.authenticate( params[:username], requestData[ "password" ] )
 
                     halt 401 if !isAuthed
-                    halt 200
+                    halt 200, "{}"
                 end
 
                 def validateParams (params)
