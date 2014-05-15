@@ -33,8 +33,8 @@ class UserController
 
     def authenticate( username, password )
         self.retrieve( username )
-        thisPass = hashPassword( password )
-        return false if thisPass.hex_string != @user.password
+        thisPass = @user != nil ? hashPassword( password ) : nil
+        return false if !thisPass or (thisPass.hex_string != @user.password)
         return true
     end
 
