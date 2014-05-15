@@ -7,7 +7,7 @@ class UserController
     Mongoid.load!('./mongoid.yml')
     attr_accessor :user
 
-    def createUser ( params )
+    def create ( params )
         warn params.to_s
         if params.empty?
             raise ArgumentError
@@ -23,12 +23,16 @@ class UserController
             end
             @user.save
         end
-     end
+    end
 
-     def retrieveUser ( username )
+    def retrieve ( username )
         @user = User.where(:username => username)
         return @user
-     end
+    end
+
+    def authenticate( username, password )
+
+    end
 
      protected
      def assignValues ( key, value )
@@ -56,7 +60,6 @@ class UserController
 
      protected
      def generateSalt
-        salt = OpenSSL::Random.random_bytes 128
-        @user.salt = salt.to_i( 2 ).to_s( 16 )
+        @user.salt = SecureRandom.base64 64
      end
 end

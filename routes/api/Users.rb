@@ -14,7 +14,7 @@ module Fatbard
                     validateParams(requestData)
 
                     begin
-                        userController.createUser(requestData)
+                        userController.create(requestData)
                     rescue => error
                         e = error.to_s
                         halt 409 if e == "Username already in use"
@@ -22,15 +22,15 @@ module Fatbard
                     end
 
                     user = userController.user
-                    halt 201, response.headers['Location'] = "/api/user/username/#{user.username}"
+                    halt 201, response.headers[ 'Location' ] = "/api/user/#{user.username}"
                 end
 
-                get '/api/user/username/:username' do
+                get '/api/user/:username' do
                     content_type :json
 
-                    usercontroller = UserController.new
+                    userController = UserController.new
                     validateParams(params)
-                    user = usercontroller.retrieveUser(params[:username])
+                    user = userController.retrieve(params[:username])
 
                     if user.empty?
                         halt 404
