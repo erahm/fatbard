@@ -6,7 +6,7 @@ article{
     margin: auto;
     padding: 1em;
 
-    background-color: $lighter;
+    background-color: $standard;
 
     @include respond-to( medium ){
         width: 60%

@@ -23,7 +23,7 @@ label{
 }
 
 a{
-    color: $complementary;
+    color: make-dull( $secondary );
 }
 
 .highlight{

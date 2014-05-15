@@ -1,0 +1,6 @@
+@function make-bright( $color ){
+    $bright-sat: 45;
+    $bright-lig: 15;
+
+    @return adjust-color( $color, $saturation: $bright-sat, $lightness: $bright-lig );
+}
