@@ -32,7 +32,10 @@ class UserController
     end
 
     def authenticate( username, password )
-
+        self.retrieve( username )
+        thisPass = hashPassword( password )
+        return false if thisPass.hex_string != @user.password
+        return true
     end
 
      protected
@@ -50,7 +53,7 @@ class UserController
             when "firstName"
                 @user.firstName = value
             when "password"
-                @user.password = hashPassword(value)
+                @user.password = hashPassword(value).hex_string
         end
      end
 

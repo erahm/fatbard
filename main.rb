@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require_relative 'routes/api/Users.rb'
+require_relative 'routes/api/Authentication.rb'
 
 module Fatbard
 	class Main < Sinatra::Base
@@ -14,5 +15,6 @@ module Fatbard
 		end
 
 		use Routes::Api::Users
+		use Routes::Api::Authentication
 	end
 end
