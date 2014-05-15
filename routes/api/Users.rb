@@ -16,11 +16,13 @@ module Fatbard
                     begin
                         userController.createUser(requestData)
                     rescue => error
-                        halt 400, error.to_s
+                        e = error.to_s
+                        halt 409 if e == "Username already in use"
+                        halt 400, e
                     end
 
                     user = userController.user
-                    halt 201, {:headerLocation => "/api/user/username/#{user.username}"}.to_json
+                    halt 201, response.headers['Location'] = "/api/user/username/#{user.username}"
                 end
 
                 get '/api/user/username/:username' do
