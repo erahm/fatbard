@@ -8,10 +8,9 @@ module Fatbard
                 post '/api/user' do
                     content_type :json
 
-
                     userController = UserController.new
 
-                    requestData = parseRequest(request)
+                    requestData = request.POST
                     validateParams(requestData)
 
                     begin
@@ -24,9 +23,20 @@ module Fatbard
                     halt 201, {:headerLocation => "/api/user/username/#{user.username}"}.to_json
                 end
 
-                def parseRequest (request)
-                    return request.POST
+                get '/api/user/username/:username' do
+                    content_type :json
+
+                    usercontroller = UserController.new
+                    validateParams(params)
+                    user = usercontroller.retrieveUser(params[:username])
+
+                    if user.empty?
+                        halt 404
+                    else
+                        halt 200, user.to_json
+                    end
                 end
+
 
                 def validateParams (params)
                     halt 400 if params.length == 0

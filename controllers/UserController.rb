@@ -25,6 +25,11 @@ class UserController
         end
      end
 
+     def retrieveUser ( username )
+        @user = User.where(:username => username)
+        return @user
+     end
+
      protected
      def assignValues ( key, value )
         case key
