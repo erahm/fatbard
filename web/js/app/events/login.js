@@ -20,9 +20,14 @@ define(
                 $.when(
                     Transfer.requestAuthentication( credentials )
                 )
-                .done( function( data, stat, x ){
-                    Security.logIn( data );
-                    window.location = "/#/dashboard";
+                .done( function(){
+                    $.when(
+                        Transfer.getUser( credentials.username )
+                    )
+                    .done( function( data ){
+                        Security.logIn( data );
+                        window.location = "/#/dashboard";
+                    });
                 })
                 .fail( function( x, stat, t ){
                     console.log( x, stat, t );
