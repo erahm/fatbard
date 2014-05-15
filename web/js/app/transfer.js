@@ -17,6 +17,17 @@ define(
             return response;
         };
 
+        Transfer.prototype.registerAccount = function( account ){
+            var response = $.ajax({
+                "url": "/api/user",
+                "type": "post",
+                "dataType": "text",
+                "data": account
+            });
+
+            return response;
+        };
+
         Transfer.prototype.getUser = function( username ){
             var response = this.deferToCache({
                 "url": "/api/user/" + username,

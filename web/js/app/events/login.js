@@ -6,6 +6,7 @@ define(
 
         LoginEvents.prototype.registerEvents = function(){
             this.registerHomeEvents();
+            this.registerEnrollEvents();
         };
 
         LoginEvents.prototype.registerHomeEvents = function(){
@@ -31,6 +32,29 @@ define(
                 })
                 .fail( function( x, stat, t ){
                     console.log( x, stat, t );
+                });
+            });
+        };
+
+        LoginEvents.prototype.registerEnrollEvents = function(){
+            $( document ).on( "fatbard.click.login/enroll/create", function( e ){
+                var clicked = e.target,
+                    $clicked = $( clicked ),
+                    account = {
+                        "username":     $clicked.siblings( '[name="username"]' ).val(),
+                        "password":     $clicked.siblings( '[name="password"]' ).val(),
+                        "email":        $clicked.siblings( '[name="email"]' ).val(),
+                        "firstName":    $clicked.siblings( '[name="fname"]' ).val()
+                    };
+
+                $.when(
+                    Transfer.registerAccount( account )
+                )
+                .done( function(){
+                    $( clicked ).trigger( "fatbard.click.login/home/authenticate" );
+                })
+                .fail( function(){
+                    console.log( "Couldn't create" );
                 });
             });
         };
