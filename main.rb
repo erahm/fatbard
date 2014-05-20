@@ -6,6 +6,7 @@ module Fatbard
 	class Main < Sinatra::Base
 		configure do
 			set :public_folder => "web"
+			enable :sessions
 		end
 
 		use Rack::Deflater
