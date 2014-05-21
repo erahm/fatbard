@@ -8,6 +8,11 @@ describe UserController do
 
     before :each do
         @userController = UserController.new
+        DatabaseCleaner[:mongoid].start
+    end
+
+    after :each do
+        DatabaseCleaner[:mongoid].clean
     end
 
     describe '#createUser' do
@@ -29,6 +34,7 @@ describe UserController do
         context 'when username parameter is not empty' do
             it 'should assign value to user.username' do
                 params = {:username => 'joebob'}
+                User.stub(:save) {}
 
                 @userController.instance_variable_set(:@user, User.new)
                 @userController.create(params)
