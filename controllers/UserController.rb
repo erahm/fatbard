@@ -9,7 +9,6 @@ class UserController
     attr_accessor :user
 
     def create ( params )
-        warn params.to_s
         if params.empty?
             raise ArgumentError
         else
