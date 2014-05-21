@@ -1,8 +1,9 @@
 define(
-    ["jquery", "transfer", "security"],
-    function( $, Transfer, Security ){
+    ["jquery", "transfer", "security", "interface/login"],
+    function( $, Transfer, Security, LoginUi ){
         var LoginEvents = function(){},
             Transfer = new Transfer();
+            Ui = new LoginUi();
 
         LoginEvents.prototype.registerEvents = function(){
             this.registerHomeEvents();
@@ -31,7 +32,7 @@ define(
                     });
                 })
                 .fail( function( x, stat, t ){
-                    console.log( x, stat, t );
+                    Ui.showNotice();
                 });
             });
         };
