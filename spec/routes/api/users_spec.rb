@@ -27,7 +27,7 @@ describe 'Users' do
                         :email => 'email@email.com',
                         :firstName => 'first name',
                         :password => 'i like chicken'
-                    }.to_json
+                    }
 
                     last_response.status.should == 201
                 end
@@ -38,10 +38,9 @@ describe 'Users' do
                         :email => 'email@email.com',
                         :firstName => 'first name',
                         :password => 'i like chicken'
-                    }.to_json
+                    }
 
-                    body = JSON.parse(last_response.body.string)
-                    body[:headerLocation].should_not be_empty
+                    last_response.headers['Location'].should == "/api/user/username"
                 end
             end
     end

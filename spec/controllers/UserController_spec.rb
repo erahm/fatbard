@@ -51,11 +51,11 @@ describe UserController do
             it 'should return a user object' do
                 username = 'username'
                 mockUser = User.create(username: username, password: 'password', firstName: 'joebob', email: 'email@email.com')
-                User.stub(:where).with(username).then_return(mockUser)
+                User.stub(:where).with(username: username).and_return([mockUser])
 
                 user = @userController.retrieve(username)
 
-                user.should == mockUser
+                user.should be_an_instance_of User
             end
         end
     end

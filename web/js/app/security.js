@@ -5,10 +5,8 @@ define(
             User = new User();
 
         Security.logIn = function( authenticationResponse ){
-            authenticationResponse = JSON.parse( authenticationResponse );
-
-            if( authenticationResponse.user ){
-                Cookies( "authentication", JSON.stringify( authenticationResponse.user ) );
+            if( authenticationResponse ){
+                Cookies( "authentication", JSON.stringify( authenticationResponse ) );
             }
             else{
                 Cookies.expire( "authentication" );
@@ -23,7 +21,7 @@ define(
         Security.userIsAuthenticated = function(){
             var auth = User.getAuthentication();
 
-            if( auth && auth.id ){
+            if( auth && auth.username ){
                 return true;
             }
             else{

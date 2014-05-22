@@ -1,9 +1,9 @@
 body > header{
-    background-color: $darker;
+    background-color: $dark;
 
-    padding: 1em;
     margin: auto auto 1.5em;
     min-width: $application-min-width;
+    height: 5em;
 
     h1, h2, h3, h4, h5, h6{
         text-align: center;
@@ -21,7 +21,10 @@ body > header{
 #logo-container{
     @include border-radius( 0.25em );
     padding: 0.5em 1em;
-    background-color: $primary-dull;
+    margin: 1em;
+    float: left;
+
+    background-color: make-dull( $primary );
     color: $text-on-dark;
 
     span, i{
@@ -30,13 +33,25 @@ body > header{
     }
 
     cursor: pointer;
-    float: left;
 }
 
 #account-container{
-    @extend #logo-container;
-
+    height: 100%;
+    padding: 0.5em 1em;
+    margin: 0;
     float: right;
+
+    background-color: make-dull( $primary );
+    color: $text-on-dark;
+
+    line-height: 4em;
+    vertical-align: middle;
+
+    span, i{
+        vertical-align: middle;
+        display: inline-block;
+    }
+
     cursor: default;
 }
 

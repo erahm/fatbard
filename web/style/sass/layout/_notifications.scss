@@ -1,0 +1,36 @@
+.notice{
+    @include border-radius( 0.25em );
+
+    background-color: $dark;
+    border: 1px solid $struts;
+
+    color: $text-standard;
+
+    padding: 1em 1em 1em 2.5em;
+    margin: auto auto 1.5em;
+
+    & i{
+        margin-left: -1.5em;
+        float: left;
+    }
+
+    &.notice-danger{
+        background-color: $error;
+        border-color: make-dark( $error );
+    }
+
+    &.notice-warn{
+        background-color: $warning;
+        border-color: make-dark( $warning );
+    }
+
+    &.notice-info{
+        background-color: $info;
+        border-color: make-dark( $info );
+    }
+
+    &.notice-okay{
+        background-color: $okay;
+        border-color: make-dark( $okay );
+    }
+}

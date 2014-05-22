@@ -1,10 +1,12 @@
 require 'sinatra/base'
 require_relative 'routes/api/Users.rb'
+require_relative 'routes/api/Authentication.rb'
 
 module Fatbard
 	class Main < Sinatra::Base
 		configure do
 			set :public_folder => "web"
+			enable :sessions
 		end
 
 		use Rack::Deflater
@@ -14,5 +16,6 @@ module Fatbard
 		end
 
 		use Routes::Api::Users
+		use Routes::Api::Authentication
 	end
 end

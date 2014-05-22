@@ -1,0 +1,6 @@
+@function make-dull( $color ){
+    $dull-sat: -10;
+    $dull-lig: -10;
+
+    @return adjust-color( $color, $saturation: $dull-sat, $lightness: $dull-lig );
+}

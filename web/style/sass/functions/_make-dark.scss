@@ -1,0 +1,6 @@
+@function make-dark( $color ){
+    $dark-sat: 20;
+    $dark-lig: -30;
+
+    @return adjust-color( $color, $saturation: $dark-sat, $lightness: $dark-lig );
+}
