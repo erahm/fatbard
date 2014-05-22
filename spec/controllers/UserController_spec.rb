@@ -15,7 +15,7 @@ describe UserController do
         DatabaseCleaner[:mongoid].clean
     end
 
-    describe '#createUser' do
+    describe '#create' do
 
         context 'when parameters are empty' do
             it 'should raise error' do
@@ -44,4 +44,20 @@ describe UserController do
             end
         end
     end
+
+    describe '#retrieve' do
+
+        context 'when username is passed' do
+            it 'should return a user object' do
+                username = 'username'
+                mockUser = User.create(username: username, password: 'password', firstName: 'joebob', email: 'email@email.com')
+                User.stub(:where).with(username: username).and_return([mockUser])
+
+                user = @userController.retrieve(username)
+
+                user.should be_an_instance_of User
+            end
+        end
+    end
+
 end
