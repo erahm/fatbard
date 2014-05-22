@@ -1,0 +1,12 @@
+{
+  "name": "fatbard",
+  "version": "0.0.1-alpha",
+  "repository": "https://github.com/erahm/fatbard",
+  "homepage": "https://github.com/erahm/fatbard",
+  "bugs": "https://github.com/erahm/fatbard/issues",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-uglify": "^0.4.0",
+    "grunt-contrib-requirejs": "^0.4.4"
+  }
+}
