@@ -4,3 +4,4 @@ Gemfile.lock
 .bundle/install.log
 
 .sass-cache*
+node_modules/*
