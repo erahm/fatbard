@@ -34,13 +34,13 @@ describe 'Users' do
 
                 it 'should return location header of user object' do
                     post '/api/user', {
-                        :username => 'othername',
+                        :username => 'username',
                         :email => 'email@email.com',
                         :firstName => 'first name',
                         :password => 'i like chicken'
                     }
 
-                    last_response.headers['Location'].should == "/api/user/othername"
+                    last_response.headers['Location'].should == "/api/user/username"
                 end
             end
     end

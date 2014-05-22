@@ -14,7 +14,7 @@ group :test do
     gem "rack"
     gem "rack-test"
     gem "mongoid-rspec"
-    gem 'database_cleaner'
+    gem "database_cleaner"
 
     #Auto run the test suite
     gem "ZenTest"

@@ -26,8 +26,22 @@ class UserController
     end
 
     def retrieve ( username )
-        @user = User.where(:username => username).first
+        @user = User.where(username: username).first
         return @user
+    end
+
+    def update ( params )
+        if params.empty?
+            raise ArgumentError
+        else
+            retrieve(params[:username])
+            @user.update(
+                username: params[:username], 
+                password: params[:password], 
+                firstName: params[:firstName], 
+                email: params[:email]
+            )
+        end
     end
 
     def authenticate( username, password )
@@ -41,7 +55,7 @@ class UserController
      def assignValues ( key, value )
         case key
             when "username"
-                user = User.where(:username => value)
+                user = User.where(username: value)
                 if user.empty?
                     @user.username = value
                 else

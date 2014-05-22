@@ -1,4 +1,3 @@
-require 'json'
 require_relative '../../controllers/UserController.rb'
 
 module Fatbard
@@ -8,37 +7,24 @@ module Fatbard
                 post '/api/user' do
                     content_type :json
 
+
                     userController = UserController.new
 
-                    requestData = request.POST
-                    validateParams(requestData)
-
                     begin
-                        userController.create(requestData)
-                    rescue => error
-                        e = error.to_s
-                        halt 409 if e == "Username already in use"
-                        halt 400, e
+                        requestData = parseRequest(request)
+                        validateParams(requestData)
+                        userController.createUser(requestData)
+                    rescue
+                        halt 400
                     end
 
                     user = userController.user
-                    halt 201, response.headers[ 'Location' ] = "/api/user/#{user.username}"
+                    halt 201, {:headerLocation => "/api/user/id/#{user._id}"}.to_json
                 end
 
-                get '/api/user/:username' do
-                    content_type :json
-
-                    userController = UserController.new
-                    validateParams(params)
-                    user = userController.retrieve(params[:username])
-
-                    if user == nil
-                        halt 404
-                    else
-                        halt 200, filterUser( user ).to_json
-                    end
+                def parseRequest (request)
+                    return JSON.parse(request.body.string)
                 end
-
 
                 def validateParams (params)
                     halt 400 if params.length == 0
