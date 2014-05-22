@@ -6,3 +6,9 @@ require_relative '../controllers/UserController.rb'
 require 'rspec'
 require 'rack/test'
 require 'mongoid'
+require 'mongoid-rspec'
+require 'database_cleaner'
+
+RSpec.configure do |config|
+  config.include Mongoid::Matchers
+end
