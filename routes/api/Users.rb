@@ -7,7 +7,6 @@ module Fatbard
                 post '/api/user' do
                     content_type :json
 
-
                     userController = UserController.new
 
                     begin
@@ -19,7 +18,23 @@ module Fatbard
                     end
 
                     user = userController.user
-                    halt 201, {:headerLocation => "/api/user/id/#{user._id}"}.to_json
+                    halt 201, {:headerLocation => "/api/user/#{user.username}"}.to_json
+                end
+
+                get '/api/user/:username' do
+                    content_type :json
+
+                    userController = UserController.new
+
+                    begin
+                        validateParams(params)
+                        user = userController.retrieve(params[:username])
+                    rescue
+                        halt 404
+                    end
+
+                    halt 200, { user: user }.to_json
+
                 end
 
                 def parseRequest (request)
