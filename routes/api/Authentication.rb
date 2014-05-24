@@ -22,6 +22,7 @@ module Fatbard
                     end
                 end
 
+                protected
                 def validateParams (params)
                     halt 400 if params.length == 0
                 end

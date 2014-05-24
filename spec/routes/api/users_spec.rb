@@ -11,6 +11,14 @@ end
 describe 'Users' do
     include Rack::Test::Methods
 
+    before :each do
+        DatabaseCleaner[:mongoid].start
+    end
+
+    after :each do
+        DatabaseCleaner[:mongoid].clean
+    end
+
     describe '#POST'
         describe '/api/user' do
             context 'if request is empty' do
@@ -34,13 +42,13 @@ describe 'Users' do
 
                 it 'should return location header of user object' do
                     post '/api/user', {
-                        :username => 'username',
+                        :username => 'othername',
                         :email => 'email@email.com',
                         :firstName => 'first name',
                         :password => 'i like chicken'
                     }
 
-                    last_response.headers['Location'].should == "/api/user/username"
+                    last_response.headers['Location'].should == "/api/user/othername"
                 end
             end
     end

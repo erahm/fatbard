@@ -26,7 +26,7 @@ class UserController
     end
 
     def retrieve ( username )
-        @user = User.where(username: username).first
+        @user = User.where(:username => username).first
         return @user
     end
 
@@ -36,16 +36,16 @@ class UserController
         else
             retrieve(params[:username])
             @user.update(
-                username: params[:username], 
-                password: params[:password], 
-                firstName: params[:firstName], 
+                username: params[:username],
+                password: params[:password],
+                firstName: params[:firstName],
                 email: params[:email]
             )
         end
     end
 
     def authenticate( username, password )
-        self.retrieve( username )
+        retrieve( username )
         thisPass = @user != nil ? hashPassword( password ) : nil
         return false if !thisPass or (thisPass.hex_string != @user.password)
         return true

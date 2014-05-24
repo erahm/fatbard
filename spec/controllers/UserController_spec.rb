@@ -8,11 +8,6 @@ describe UserController do
 
     before :each do
         @userController = UserController.new
-        DatabaseCleaner[:mongoid].start
-    end
-
-    after :each do
-        DatabaseCleaner[:mongoid].clean
     end
 
     describe '#create' do

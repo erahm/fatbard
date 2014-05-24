@@ -23,7 +23,7 @@ describe 'Authentication' do
             context 'if request is formatted properly' do
                 it 'should return 401' do
                     post '/api/authenticate/arandomname', {
-                        :password => 'i like chicken'
+                        password: 'i like chicken'
                     }
 
                     last_response.status.should == 401
@@ -31,14 +31,14 @@ describe 'Authentication' do
 
                 it 'should return 200' do
                     post '/api/user', {
-                        :username => 'george',
-                        :email => 'email@email.com',
-                        :firstName => 'first name',
-                        :password => 'password'
+                        username: 'george',
+                        email: 'email@email.com',
+                        firstName: 'first name',
+                        password: 'password'
                     }
 
                     post '/api/authenticate/george', {
-                        :password => 'password'
+                        password: 'password'
                     }
 
                     last_response.status.should == 200
