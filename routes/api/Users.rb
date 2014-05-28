@@ -35,8 +35,24 @@ module Fatbard
                     if user == nil
                         halt 404
                     else
-                        halt 200, filterUser( user ).to_json
+                        halt 200, { user: filterUser( user ) }.to_json
                     end
+                end
+
+                put '/api/user/:username' do
+                    content_type :json
+
+                    userController = UserController.new
+                    requestData = request.body.read
+                    validateParams(requestData)
+
+                    begin
+                        userController.update(params[:username], requestData)
+                    rescue 
+                        halt 404 if userController.user == nil
+                    end
+
+                    halt 200, { user: filterUser(userController.user) }.to_json
                 end
 
 

@@ -30,16 +30,16 @@ class UserController
         return @user
     end
 
-    def update ( params )
-        if params.empty?
+    def update ( username, params )
+        if params.empty? || username.empty?
             raise ArgumentError
         else
-            retrieve(params[:username])
+            retrieve(username)
             @user.update(
-                username: params[:username],
-                password: params[:password],
-                firstName: params[:firstName],
-                email: params[:email]
+                username: username,
+                password: hashPassword(params['password']),
+                firstName: params['firstName'],
+                email: params['email']
             )
         end
     end

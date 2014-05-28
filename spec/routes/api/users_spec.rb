@@ -19,7 +19,7 @@ describe 'Users' do
         DatabaseCleaner[:mongoid].clean
     end
 
-    describe '#POST'
+    describe '#POST' do
         describe '/api/user' do
             context 'if request is empty' do
                 it "should return 400" do
@@ -31,10 +31,10 @@ describe 'Users' do
             context 'if request is formatted properly' do
                 it 'should return 201' do
                     post '/api/user', {
-                        :username => 'username',
-                        :email => 'email@email.com',
-                        :firstName => 'first name',
-                        :password => 'i like chicken'
+                        username: 'username',
+                        email: 'email@email.com',
+                        firstName: 'first name',
+                        password: 'i like chicken'
                     }
 
                     last_response.status.should == 201
@@ -42,14 +42,54 @@ describe 'Users' do
 
                 it 'should return location header of user object' do
                     post '/api/user', {
-                        :username => 'othername',
-                        :email => 'email@email.com',
-                        :firstName => 'first name',
-                        :password => 'i like chicken'
+                        username: 'othername',
+                        email: 'email@email.com',
+                        firstName: 'first name',
+                        password: 'i like chicken'
                     }
 
                     last_response.headers['Location'].should == "/api/user/othername"
                 end
             end
+        end
+    end
+
+    describe '#PUT' do
+        describe '/api/user/:username' do
+            context 'if user does not exsist' do
+                it 'should return 404' do
+                    fakeUsername = 'username'
+                    User.stub(:where).with(username: fakeUsername).and_return(nil)
+
+                    put "/api/user/#{fakeUsername}", {
+                        email: 'email@email.com',
+                        firstName: 'first name',
+                        password: 'i like chicken'
+                    }
+
+                    last_response.status.should == 404
+                end
+            end
+
+            context 'if user does exsist' do
+                it 'should return 200' do
+                    fakeUser = User.new(
+                        username: 'username',
+                        firstName: 'first name',
+                        password: 'password',
+                        email: 'email@email.com'
+                    )
+                    User.stub(:where).with(username: fakeUser.username).and_return([fakeUser])
+
+                    put "/api/user/#{fakeUser.username}", {
+                        firstName: 'first name',
+                        password: 'password',
+                        email: 'email@email.com'
+                    }
+
+                    last_response.status.should == 200
+                end
+            end
+        end
     end
 end
