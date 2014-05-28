@@ -55,6 +55,20 @@ module Fatbard
                     halt 200, { user: filterUser(userController.user) }.to_json
                 end
 
+                delete '/api/user/:username' do
+                    content_type :json
+
+                    userController = UserController.new
+                    documentsAffected = userController.delete(params[:username])
+
+                    if documentsAffected == 1
+                        halt 204
+                    else
+                        halt 404
+                    end
+
+                end
+
 
                 def validateParams (params)
                     halt 400 if params.length == 0

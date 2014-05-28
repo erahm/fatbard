@@ -38,7 +38,7 @@ class UserController
     end
 
     def update ( username, params )
-        if params.empty? || username.empty?
+        if params.empty? or username.empty?
             raise ArgumentError
         else
             retrieve(username)
@@ -49,6 +49,20 @@ class UserController
                 email: params['email']
             )
         end
+    end
+
+    def delete ( username )
+        retrieve(username)
+
+        #TODO figure out how to validate success of mongoid calls - erahm - 27 may 2014
+        if @user == nil
+            rows = 0
+        else
+            @user.delete
+            rows = 1
+        end
+
+        return rows
     end
 
     def authenticate( username, password )
