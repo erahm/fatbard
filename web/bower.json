@@ -25,9 +25,15 @@
     "require": "requirejs#~2.1.11",
     "sammy": "~0.7.5",
     "jquery": "~2.1.0",
-    "font-awesome": "~4.0.3",
+    "font-awesome": "~4.1.0",
     "moment": "~2.5.1",
     "cookies-js": "~0.3.1",
     "cookies": "cookies-js#~0.3.1"
+  },
+  "exportsOverride": {
+    "font-awesome":{
+      "/scss": "**/*.scss",
+      "/fonts": "fonts/*.*"
+    }
   }
 }
