@@ -92,4 +92,35 @@ describe 'Users' do
             end
         end
     end
+
+    describe '#GET' do
+        describe '/api/user/:username' do
+            context 'if user does not exsist' do
+                it 'should return 404' do
+                    fakeUsername = 'username'
+                    User.stub(:where).with(username: fakeUsername).and_return(nil)
+
+                    get "/api/user/#{fakeUsername}"
+
+                    last_response.status.should == 404
+                end
+            end
+
+            context 'if user does exist' do
+                it 'should return 200' do
+                    fakeUser = User.new(
+                        username: 'username',
+                        firstName: 'first name',
+                        password: 'password',
+                        email: 'email@email.com'
+                    )
+                    User.stub(:where).with(username: fakeUser.username).and_return([fakeUser])
+
+                    get "/api/user/#{fakeUser.username}"
+
+                    last_response.status.should == 200
+                end
+            end
+        end
+    end
 end

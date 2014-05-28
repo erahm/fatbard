@@ -26,7 +26,14 @@ class UserController
     end
 
     def retrieve ( username )
-        @user = User.where(:username => username).first
+        user = User.where(:username => username)
+        
+        if user == nil
+            @user = nil
+        else
+            @user = user.first
+        end
+
         return @user
     end
 
