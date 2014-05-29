@@ -90,7 +90,7 @@ describe 'Users' do
 
                 it 'should return filtered user' do
                     fakeUser = User.new(
-                        username: 'username',
+                        username: 'erich',
                         firstName: 'first name',
                         password: 'password',
                         email: 'email@email.com'
