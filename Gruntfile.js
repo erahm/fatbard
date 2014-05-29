@@ -142,7 +142,7 @@ module.exports = function( grunt ){
                     "banner": '/* <%= pkg.name %> Development Build --- <%= grunt.template.today("yyyy-mm-dd hh:MM:ss.l") %> */\n'
                 },
                 "files": {
-                    'web/js/build/proj.js': ['web/js/build/proj.js']
+                    'web/js/build/<%= pkg.name %>.js': ['web/js/build/<%= pkg.name %>.js']
                 }
             }
         },
@@ -155,7 +155,7 @@ module.exports = function( grunt ){
         "requirejs":{
             "compile":{
                 "options":{
-                    "baseUrl": "web/js/app/",
+                    "baseUrl": "web/js/src/",
                     "paths":{
                         "lib":          "../../vendor",
 
