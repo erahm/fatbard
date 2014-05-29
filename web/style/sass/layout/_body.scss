@@ -4,4 +4,12 @@ body div#main{
     min-width: 250px;
 
     margin: auto;
+
+    @include respond-to( medium ){
+        width: 75%;
+    }
+
+    @include respond-to( small ){
+        width: 100%;
+    }
 }
