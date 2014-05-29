@@ -28,5 +28,11 @@
     "moment": "~2.5.1",
     "cookies-js": "~0.3.1",
     "cookies": "cookies-js#~0.3.1"
+  },
+  "exportsOverride": {
+    "font-awesome":{
+      "/scss": "**/*.scss",
+      "/fonts": "fonts/*.*"
+    }
   }
 }
