@@ -9,9 +9,12 @@ define(
             var notice = new this.Notification({
                     "content": "Username or Password was incorrect.<br />Please check your entries and try again.",
                     "type": "error"
-                });
+                }),
+                domOb = $( notice.get() );
 
-            $( "form" ).before( notice.get() );
+            $( "form" ).before( domOb );
+
+            domOb.siblings( ".notice" ).remove();
         };
 
         return LoginInterface;
