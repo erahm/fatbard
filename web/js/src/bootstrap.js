@@ -21,11 +21,13 @@ requirejs.config({
             },
             "routers":[
                 "error",
-                "login"
+                "login",
+                "profile"
             ],
             "events":[
                 "header",
-                "login"
+                "login",
+                "profile"
             ]
         }
     }
