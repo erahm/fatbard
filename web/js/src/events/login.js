@@ -2,7 +2,7 @@ define(
     ["jquery", "transfer", "security", "interface/login"],
     function( $, Transfer, Security, LoginUi ){
         var LoginEvents = function(){},
-            Transfer = new Transfer();
+            Transfer = new Transfer(),
             Ui = new LoginUi();
 
         LoginEvents.prototype.registerEvents = function(){
