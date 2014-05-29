@@ -55,7 +55,7 @@ define(
 
                 switch( type ){
                     case "warn":
-                        icon = "fa-exclamation"
+                        icon = "fa-exclamation";
                         break;
                     case "okay":
                         icon = "fa-check-circle";
