@@ -1,0 +1,24 @@
+<!doctype>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+        <title>Fatbard</title>
+
+        <link rel="stylesheet" type="text/css" href="style/screen.min.css" />
+        <script type="text/javascript" data-main="js/build/@@@proj-application-start@@@" src="vendor/require/require.js"></script>
+    </head>
+    <body>
+        <div class="preloader">
+            <p>Sadly, it appears that something has broken or Javascript is turned off in your browser.</p>
+            <p>You will need Javascript enabled to enjoy this website.</p>
+            <p>Learn how to enable Javascript in your browser by <a href="http://enable-javascript.com">visiting enable-javascript.com</a> right now!</p>
+        </div>
+        <noscript>
+            <p>Sadly, it appears that something has broken or Javascript is turned off in your browser.</p>
+            <p>You will need Javascript enabled to enjoy this website.</p>
+            <p>Learn how to enable Javascript in your browser by <a href="http://enable-javascript.com">visiting enable-javascript.com</a> right now!</p>
+        </noscript>
+    </body>
+</html>
