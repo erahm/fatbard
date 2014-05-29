@@ -72,9 +72,9 @@ define(
             }
 
             notice
-            .addClass( type )
-            .html( content )
-            .prepend( "<i class=\"fa " + icon + "\"></i>" );
+                .addClass( type )
+                .html( content )
+                .prepend( "<i class=\"fa " + icon + "\"></i>" );
 
             return notice.wrap( "<div></div>" ).parent().html();
         };
