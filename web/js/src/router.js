@@ -11,7 +11,7 @@ define(
             var tmpl = new Render( "content/template.html" ),
                 head = new Header();
 
-            $( document ).on( "fatbard.core.routing.load.done", function(){
+            $( document ).on( "fatbard.core/routing/load/done", function(){
                 app.run( '#/' );
             });
 
@@ -48,7 +48,7 @@ define(
                         routerCount++;
 
                         if( routerCount === _( routes ).size() ){
-                            $( document ).trigger( "fatbard.core.routing.load.done" );
+                            $( document ).trigger( "fatbard.core/routing/load/done" );
                         }
                     }
                 );
