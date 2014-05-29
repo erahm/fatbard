@@ -9,3 +9,18 @@
         border-bottom: 1px solid $error;
     }
 }
+
+.keyval{
+    margin: 0.25em 0 1em 0;
+
+    & .editable{
+        border-bottom: 1px solid $struts;
+
+        & .editable-controls{
+            padding: 0.25em;
+            width: 1.5em;
+
+            float: left;
+        }
+    }
+}
