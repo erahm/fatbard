@@ -54,14 +54,14 @@ describe 'Users' do
         end
     end
 
-    describe '#PUT' do
+    describe '#PATCH' do
         describe '/api/user/:username' do
             context 'if user does not exsist' do
                 it 'should return 404' do
                     fakeUsername = 'username'
                     User.stub(:where).with(username: fakeUsername).and_return(nil)
 
-                    put "/api/user/#{fakeUsername}", {
+                    patch "/api/user/#{fakeUsername}", {
                         email: 'email@email.com',
                         firstName: 'first name',
                         password: 'i like chicken'
@@ -81,13 +81,34 @@ describe 'Users' do
                     )
                     User.stub(:where).with(username: fakeUser.username).and_return([fakeUser])
 
-                    put "/api/user/#{fakeUser.username}", {
-                        firstName: 'first name',
-                        password: 'password',
-                        email: 'email@email.com'
+                    patch "/api/user/#{fakeUser.username}", {
+                        firstName: 'name'
                     }
 
                     last_response.status.should == 200
+                end
+
+                it 'should return filtered user' do
+                    fakeUser = User.new(
+                        username: 'username',
+                        firstName: 'first name',
+                        password: 'password',
+                        email: 'email@email.com'
+                    )
+
+                    expected = {user: {
+                        _id: fakeUser._id,
+                        username: fakeUser.username,
+                        email: fakeUser.email,
+                        firstName: 'name'
+                    }}.to_json
+                    User.stub(:where).with(username: fakeUser.username).and_return([fakeUser])
+
+                    patch "/api/user/#{fakeUser.username}", {
+                        firstName: 'name'
+                    }
+
+                    last_response.body.should == expected
                 end
             end
         end

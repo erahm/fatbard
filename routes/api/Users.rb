@@ -39,20 +39,30 @@ module Fatbard
                     end
                 end
 
-                put '/api/user/:username' do
+                patch '/api/user/:username' do
                     content_type :json
 
                     userController = UserController.new
                     requestData = request.body.read
                     validateParams(requestData)
 
+                    responseData = nil
+
                     begin
                         userController.update(params[:username], requestData)
-                    rescue 
-                        halt 404 if userController.user == nil
+                    rescue => error
+                        haltCode = 409 if error.to_s == "Username already in use"
                     end
 
-                    halt 200, { user: filterUser(userController.user) }.to_json
+                    if userController.user == nil
+                        haltCode = 404
+                    else
+                        haltCode = 200
+                        responseData = { user: filterUser(userController.user) }.to_json
+                    end
+
+                    halt haltCode, responseData
+
                 end
 
                 delete '/api/user/:username' do

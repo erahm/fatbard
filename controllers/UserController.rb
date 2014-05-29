@@ -39,15 +39,15 @@ class UserController
 
     def update ( username, params )
         if params.empty? or username.empty?
-            raise ArgumentError
+            @user = nil
         else
             retrieve(username)
-            @user.update(
-                username: username,
-                password: hashPassword(params['password']),
-                firstName: params['firstName'],
-                email: params['email']
-            )
+
+            params.each do |key, value|
+                assignValues(key, value)
+            end
+
+            @user.save
         end
     end
 
