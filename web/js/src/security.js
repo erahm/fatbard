@@ -6,7 +6,7 @@ define(
 
         Security.logIn = function( authenticationResponse ){
             if( authenticationResponse ){
-                Cookies( "authentication", JSON.stringify( authenticationResponse ) );
+                Cookies( "authentication", JSON.stringify( authenticationResponse.user ) );
             }
             else{
                 Cookies.expire( "authentication" );
