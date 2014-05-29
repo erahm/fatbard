@@ -27,7 +27,7 @@ class UserController
 
     def retrieve ( username )
         user = User.where(:username => username)
-        
+
         if user == nil
             @user = nil
         else
@@ -43,7 +43,7 @@ class UserController
         else
             retrieve(username)
 
-            params.each do |key, value|
+            params.each_pair do |key, value|
                 assignValues(key, value)
             end
 

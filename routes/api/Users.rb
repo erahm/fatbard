@@ -43,7 +43,7 @@ module Fatbard
                     content_type :json
 
                     userController = UserController.new
-                    requestData = request.body.read
+                    requestData = request.POST
                     validateParams(requestData)
 
                     responseData = nil
