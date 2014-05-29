@@ -7,7 +7,7 @@
         <title>Fatbard</title>
 
         <link rel="stylesheet" type="text/css" href="style/screen.min.css" />
-        <script type="text/javascript" data-main="js/src/bootstrap" src="vendor/require/require.js"></script>
+        <script type="text/javascript" data-main="js/build/@@@proj-application-start@@@" src="vendor/require/require.js"></script>
     </head>
     <body>
         <div class="preloader">

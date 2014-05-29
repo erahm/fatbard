@@ -7,7 +7,6 @@
     "erahm <erahm84@gmail.com>"
   ],
   "description": "A campaign and character management tool for the Pathfinder RPG",
-  "main": "index.html",
   "keywords": [
   ],
   "license": "MIT",
