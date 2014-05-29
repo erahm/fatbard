@@ -5,7 +5,7 @@
 <div id="account-container">
 <% if( typeof user !== "undefined" ){ %>
     <!-- User stuff -->
-    <%= user.firstName %> | <a href="#/logout/">Log Out</a>
+    <a href="#/profile"><%= user.firstName %></a> | <a href="#/logout/">Log Out</a>
 <% }
 else{ %>
     Welcome!
