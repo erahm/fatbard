@@ -10,16 +10,16 @@
     }
 }
 
-.keyval{
+.editable{
     margin: 0.25em 0 1em 0;
 
-    & .editable{
+    & .editable-value{
         border-bottom: 1px solid $struts;
 
         overflow: hidden;
         white-space: nowrap;
 
-        &>span{
+        & > span{
             display: inline-block;
             padding: 0.25em;
         }
@@ -29,6 +29,10 @@
             width: 1.5em;
 
             float: left;
+
+            & i{
+                cursor: pointer;
+            }
         }
     }
 }
