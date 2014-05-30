@@ -45,15 +45,21 @@ Getting Started - Backend
 
         `rvm install 2.1.1`
         `rvm use 2.1`
+
         * Now check your Ruby version with `ruby -v`
 
 2.  Install the [Bundler](http://bundler.io/) gem using `gem install bundler`
+
         * Navigate to the project root and install run `bundle install` to install the required Gems
 
 4.  Install [MongoDB](http://docs.mongodb.org/manual/installation/) and run the following commands:
-        `mkdir -p /data/db` to make the /data/db directory
+
+            `mkdir -p /data/db` to make the /data/db directory
+
         * Make sure to set the permissions of the /data/db directory so that your user has read and write permisssions.
+
         * Now run `mongod`
 
 5.  Start the Rack server
+
         * Navigate to the project root and run the following command: `bundle exec rackup -p 4567`
