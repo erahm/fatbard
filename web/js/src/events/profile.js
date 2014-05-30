@@ -1,13 +1,14 @@
 define(
     ["jquery"],
     function( $ ){
-        var ProfileEvents = function(){};
+        var ProfileEvents = function(){},
+            bindingContext = $( document );
 
         ProfileEvents.prototype.registerEvents = function(){
-            this.registerProfileEvents();
+            this.registerViewEvents();
         };
 
-        ProfileEvents.prototype.registerProfileEvents = function(){
+        ProfileEvents.prototype.registerViewEvents = function(){
         };
 
         return ProfileEvents;
