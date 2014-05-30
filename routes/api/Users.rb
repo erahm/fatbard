@@ -69,13 +69,15 @@ module Fatbard
                     content_type :json
 
                     userController = UserController.new
-                    documentsAffected = userController.delete(params[:username])
+                    haltCode = 200
 
-                    if documentsAffected == 1
-                        halt 204
-                    else
-                        halt 404
+                    begin
+                        userController.delete(params[:username])
+                    rescue
+                        haltCode = 404
                     end
+
+                    halt haltCode
 
                 end
 
