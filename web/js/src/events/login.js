@@ -3,7 +3,8 @@ define(
     function( $, Transfer, Security, LoginUi ){
         var LoginEvents = function(){},
             Transfer = new Transfer(),
-            Ui = new LoginUi();
+            Ui = new LoginUi(),
+            bindingContext = $( document );
 
         LoginEvents.prototype.registerEvents = function(){
             this.registerHomeEvents();
@@ -11,7 +12,7 @@ define(
         };
 
         LoginEvents.prototype.registerHomeEvents = function(){
-            $( document ).on( "fatbard.click.login/home/authenticate", function( e ){
+            bindingContext.on( "fatbard.click.login/home/authenticate", function( e ){
                 var clicked = e.target,
                     $clicked = $( clicked ),
                     credentials = {
@@ -38,7 +39,7 @@ define(
         };
 
         LoginEvents.prototype.registerEnrollEvents = function(){
-            $( document ).on( "fatbard.click.login/enroll/create", function( e ){
+            bindingContext.on( "fatbard.click.login/enroll/create", function( e ){
                 var clicked = e.target,
                     $clicked = $( clicked ),
                     account = {
