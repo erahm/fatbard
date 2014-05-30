@@ -1,0 +1,24 @@
+.modal-overlay{
+    background-color: rgba( 0, 0, 0, .5 );
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    .modal{
+        @include border-radius( 1em );
+        @include box-shadow( 0.25em, 0.25em, 0.25em, 0.15em, $darker );
+
+        background-color: $standard;
+
+        width: 25em;
+        height: 10em;
+
+        margin: 10em auto auto auto;
+        padding: 1.5em;
+
+        border: 1px solid $struts
+    }
+}
