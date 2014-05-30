@@ -1,4 +1,4 @@
-fatbard
+Fatbard
 =======
 A campaign and character management tool for the Pathfinder RPG
 
@@ -36,3 +36,24 @@ Getting Started - Web
 
 Getting Started - Backend
 -------------------------
+
+1.  Install Ruby 2.1.1
+        * This can easily be done with [RVM](http://rvm.io/rvm/install) using the following commands
+            `sudo apt-get install ruby-rvm`
+
+            >This install process may vary based on your Operating System
+
+            `rvm install 2.1.1`
+            `rvm use 2.1`
+        * Now check your Ruby version with `ruby -v`
+
+2.  Install the [Bundler](http://bundler.io/) gem using `gem install bundler`
+        * Navigate to the project root and install run `bundle install` to install the required Gems
+
+4.  Install [MongoDB](http://docs.mongodb.org/manual/installation/) and run the following commands:
+        `mkdir -p /data/db` to make the /data/db directory
+        * Make sure to set the permissions of the /data/db directory so that your user has read and write permisssions.
+        * Now run `mongod`
+
+5.  Start the Rack server
+        * Navigate to the project root and run the following command: `bundle exec rackup -p 4567`

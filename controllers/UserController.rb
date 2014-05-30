@@ -54,15 +54,8 @@ class UserController
     def delete ( username )
         retrieve(username)
 
-        #TODO figure out how to validate success of mongoid calls - erahm - 27 may 2014
-        if @user == nil
-            rows = 0
-        else
-            @user.delete
-            rows = 1
-        end
+        @user.delete
 
-        return rows
     end
 
     def authenticate( username, password )
