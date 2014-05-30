@@ -37,14 +37,14 @@ Getting Started - Web
 Getting Started - Backend
 -------------------------
 
-1.  Install Ruby 2.1.1
-        * This can easily be done with [RVM](http://rvm.io/rvm/install) using the following commands
+1.  Install Ruby 2.1.1.
+        * This can easily be done with [RVM](http://rvm.io/rvm/install) using the following commands:
             `sudo apt-get install ruby-rvm`
 
-            >This install process may vary based on your Operating System
+        >This install process may vary based on your Operating System
 
-            `rvm install 2.1.1`
-            `rvm use 2.1`
+        `rvm install 2.1.1`
+        `rvm use 2.1`
         * Now check your Ruby version with `ruby -v`
 
 2.  Install the [Bundler](http://bundler.io/) gem using `gem install bundler`
