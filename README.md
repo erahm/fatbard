@@ -52,7 +52,7 @@ Getting Started - Backend
 
     * Navigate to the project root and install run `bundle install` to install the required Gems
 
-4.  Install [MongoDB](http://docs.mongodb.org/manual/installation/) and run the following commands:
+3.  Install [MongoDB](http://docs.mongodb.org/manual/installation/) and run the following commands:
 
     `mkdir -p /data/db` to make the /data/db directory
 
@@ -60,6 +60,6 @@ Getting Started - Backend
 
     * Now run `mongod`
 
-5.  Start the Rack server
+4.  Start the Rack server
 
     * Navigate to the project root and run the following command: `bundle exec rackup -p 4567`
