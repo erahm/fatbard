@@ -30,6 +30,7 @@ module.exports = function( grunt ){
                 "options":{
                     "layout": "byComponent",
                     "targetDir": "./web/vendor",
+                    "cleanBowerDir": true,
                     "verbose": true
                 }
             }
@@ -208,6 +209,7 @@ module.exports = function( grunt ){
 
     grunt.registerTask( 'build-ugly',
         [
+            'prepare',
             'requirejs',
             'uglify:proj',
             'replace:dev',
