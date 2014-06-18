@@ -43,7 +43,7 @@ Getting Started - Backend
 
     >This install process may vary based on your Operating System
 
-    `rvm install 2.1.1`
+    `rvm install 2.1.1`  
     `rvm use 2.1`
 
     * Now check your Ruby version with `ruby -v`
