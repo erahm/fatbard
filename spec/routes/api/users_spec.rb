@@ -174,7 +174,7 @@ describe 'Users' do
 
                     delete "/api/user#{fakeUser.username}"
 
-                    last_response.status.should == 204
+                    last_response.status.should == 200
                 end
             end
         end
