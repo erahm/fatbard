@@ -69,14 +69,16 @@ module Fatbard
                     content_type :json
 
                     userController = UserController.new
-                    haltCode = 200
+                    haltCode = 204
 
                     begin
                         userController.delete(params[:username])
-                    rescue
+                    rescue => error
+                        warn error.to_s
                         haltCode = 404
                     end
 
+                    warn "halt code = #{haltCode}"
                     halt haltCode
 
                 end

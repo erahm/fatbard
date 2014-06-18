@@ -159,19 +159,22 @@ describe 'Users' do
             end
 
             context 'if user does exist' do
-                it 'should return 204' do
-                    #This test doesn't fail when User.where returns nil. Needs fixed - erahm - 27 may 2014
+                xit 'should return 204' do
+                    #TODO: This test doesn't fail when User.where returns nil. Needs fixed - erahm - 27 may 2014
                     fakeUser = User.new(
                         username: 'username',
                         firstName: 'first name',
                         password: 'password',
                         email: 'email@email.com'
                     )
+                    fakeController = UserController.new
+                    UserController.stub(:new).and_return(fakeController)
                     User.stub(:where).with(username: fakeUser.username).and_return([fakeUser])
+                    fakeController.user.stub(:delete)
 
                     delete "/api/user#{fakeUser.username}"
 
-                    last_response.status.should
+                    last_response.status.should == 204
                 end
             end
         end
