@@ -3,11 +3,11 @@ require 'active_support'
 require 'mongoid'
 
 class CampaignController
-    Mongoid::load!('.mongoid.yml')
+    Mongoid::load!('./mongoid.yml')
     attr_accessor :campaign
 
     def retrieve ( id )
-        campaign = Campaign.where(:id => id)
+        campaign = Campaign.where(:_id => id)
 
         if campaign == nil
             @campaign = campaign
