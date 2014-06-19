@@ -17,4 +17,10 @@ class CampaignController
 
         return @campaign
     end
+
+    def retrieveJournal ( id )
+        retrieve(id)
+
+        return @campaign.journal
+    end
 end
