@@ -17,4 +17,54 @@ class JournalEntryController
 
         return @journalEntry
     end
+
+    def create ( params )
+        if params.empty?
+            @journalEntry = nil
+        else
+            @journalEntry = JournalEntry.new
+            params.each_pair do |key, value|
+                assignValues(key, value)
+            end
+
+            save()
+        end
+    end
+
+    def update ( id, params )
+        if params.empty? or id.empty?
+            @journalEntry = nil
+        else
+            retrieve(id)
+
+            params.each_pair do |key, value|
+                assignValues(key, value)
+            end
+        end
+
+        save()
+    end
+
+    def delete ( id )
+        retrieve(id)
+
+        @journalEntry.delete
+    end
+
+    protected
+    def assignValues ( key, value )
+        case key
+            when "character"
+                @journalEntry.character = value
+            when "text"
+                @journalEntry.text = value
+        end
+    end
+
+    protected
+    def save
+        unless @journalEntry == nil
+            @journalEntry.save            
+        end
+    end
 end
