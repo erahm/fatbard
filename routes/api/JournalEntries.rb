@@ -12,8 +12,7 @@ module Fatbard
 					campaignController = CampaignController.new
 
 					validateParams(params)
-					campaignController.retrieve(params[:campaignId])
-					journal = campaignController.campaign.journal
+					journal = campaignController.retrieveJournal(params[:campaignId])
 
 					if journal == nil
 						haltCode = 404
