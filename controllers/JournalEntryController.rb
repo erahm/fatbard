@@ -48,7 +48,7 @@ class JournalEntryController
     def delete ( id )
         retrieve(id)
 
-        @journalEntry.delete
+        @journalEntry.delete unless @journalEntry == nil
     end
 
     protected
@@ -64,7 +64,7 @@ class JournalEntryController
     protected
     def save
         unless @journalEntry == nil
-            @journalEntry.save            
+            @journalEntry.save
         end
     end
 end
