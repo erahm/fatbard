@@ -63,8 +63,6 @@ class JournalEntryController
 
     protected
     def save
-        unless @journalEntry == nil
-            @journalEntry.save
-        end
+        @journalEntry.save unless @journalEntry == nil
     end
 end
