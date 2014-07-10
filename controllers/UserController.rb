@@ -61,8 +61,14 @@ class UserController
     def authenticate( username, password )
         retrieve( username )
         thisPass = @user != nil ? hashPassword( password ) : nil
-        return false if !thisPass or (thisPass.hex_string != @user.password)
-        return true
+
+        if !thisPass or (thisPass.hex_string != @user.password)
+            retval = false
+        else
+            retval = true
+        end
+        
+        return retval
     end
 
      protected
