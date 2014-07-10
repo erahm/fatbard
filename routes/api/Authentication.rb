@@ -16,10 +16,14 @@ module Fatbard
                     isAuthed = userController.authenticate( params[:username], requestData[ "password" ] )
 
                     if isAuthed
-                        halt 200, "{}"
+                        haltCode = 200
+                        returnData = "{}"
                     else
-                        halt 401
+                        haltCode = 401
+                        returnData = nil
                     end
+
+                    halt haltCode, returnData
                 end
 
                 protected
