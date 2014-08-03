@@ -11,9 +11,9 @@ Fatbard requires the following software packages to run...
 * [Grunt/Grunt-CLI](http://www.gruntjs.com)
 
 ...for the backend:  
-* Ruby
-* Rack
-* Sinatra
+* [Ruby](https://www.ruby-lang.org/en/)
+* [Rack](http://rack.github.io/)
+* [Sinatra](http://www.sinatrarb.com/)
 
 Getting Started - Web
 ---------------------
