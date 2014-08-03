@@ -39,7 +39,7 @@ Getting Started - Backend
 
 1.  Install Ruby 2.1.1.
     * This can easily be done with [RVM](http://rvm.io/rvm/install) using the following commands:
-        `sudo apt-get install ruby-rvm`
+    `sudo apt-get install ruby-rvm`
 
     >This install process may vary based on your Operating System
 
