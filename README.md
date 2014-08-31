@@ -48,11 +48,11 @@ Getting Started - Backend
 
     * Now check your Ruby version with `ruby -v`
 
--  Install the [Bundler](http://bundler.io/) gem using `gem install bundler`
+2.  Install the [Bundler](http://bundler.io/) gem using `gem install bundler`
 
     * Navigate to the project root and install run `bundle install` to install the required Gems
 
--  Install [MongoDB](http://docs.mongodb.org/manual/installation/) and run the following commands:
+3.  Install [MongoDB](http://docs.mongodb.org/manual/installation/) and run the following commands:
 
     `mkdir -p /data/db` to make the /data/db directory
 
@@ -60,6 +60,6 @@ Getting Started - Backend
 
     * Now run `mongod`
 
--  Start the Rack server
+4.  Start the Rack server
 
     * Navigate to the project root and run the following command: `bundle exec rackup -p 4567`
