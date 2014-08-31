@@ -21,7 +21,7 @@ Getting Started - Web
 1.  Unless you have previously installed them, install [NodeJS](http://www.nodejs.org) and [Grunt/Grunt-CLI](http://www.gruntjs.com).  
     * It would be prudent to follow the instructions located at those pages, but it *might* be as simple as:  
         `sudo apt-get install nodejs`  
-        `sudo npm install -g grunt grunt-cli`
+        `sudo npm install -g grunt-cli`
 
     >Some *nix environments do not install npm automatically with nodejs in certain situations.  
     >Issue `npm -v` to verify your system has npm installed.
