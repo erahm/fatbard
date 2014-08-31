@@ -132,7 +132,8 @@ module.exports = function( grunt ){
         "uglify": {
             "proj": {
                 "options": {
-                    "banner": '/* <%= pkg.name %> --- <%= grunt.template.today("yyyy-mm-dd hh:MM:ss.l") %> */\n'
+                    "banner": '/* <%= pkg.name %> --- <%= grunt.template.today("yyyy-mm-dd hh:MM:ss.l") %> */\n',
+                    "beautify": true
                 },
                 "files": {
                     'web/js/build/<%= pkg.name %>.js': ['web/js/build/<%= pkg.name %>.js']
@@ -149,8 +150,12 @@ module.exports = function( grunt ){
         },
         "watch": {
             "scripts": {
-                "files": ['web/js/src/**/*.js', 'web/js/test/**/*.js', 'web/style/**/*.scss', 'Gruntfile.js', 'web/index.html-preformat'],
-                "tasks": ['build']
+                "files": ['web/js/src/**/*.js', 'web/js/test/**/*.js', 'Gruntfile.js', 'web/index.html-preformat'],
+                "tasks": ['copy', 'replace-dev']
+            },
+            "styles": {
+                "files": ['web/style/**/*.scss'],
+                "tasks": ['sass:dev']
             }
         },
         "requirejs":{
@@ -161,10 +166,11 @@ module.exports = function( grunt ){
                         "lib":          "../../vendor",
 
                         "jquery":       "empty:",
-                        "sammy":        "../../vendor/sammy/lib/sammy",
+                        "sammy":        "../../vendor/sammy/sammy",
                         "underscore":   "../../vendor/underscore/underscore",
-                        "moment":       "../../vendor/moment/min/moment.min",
-                        "cookies":      "../../vendor/cookies/src/cookies.min"
+                        "moment":       "../../vendor/moment/moment",
+                        "cookies":      "../../vendor/cookies/src/cookies.min",
+                        "backbone":     "../../vendor/backbone/backbone"
                     },
                     "shim": {
                         "sammy": {
