@@ -12,17 +12,22 @@ module Fatbard
 
                     requestData = request.POST
                     validateParams(requestData)
+                    username = requestData[:username]
 
-                    begin
+                    if userController.retrieve(username) == nil
                         userController.create(requestData)
-                    rescue => error
-                        e = error.to_s
-                        halt 409 if e == "Username already in use"
-                        halt 400, e
+                        user = userController.user
+                        haltCode = 201
+                        responseData = "/api/user/#{user.username}"
+                        responseType = 'Location'
+                    else
+                        haltCode = 403
+                        responseType = 'Error'
+                        responseData = 'User already exists'
                     end
 
-                    user = userController.user
-                    halt 201, response.headers[ 'Location' ] = "/api/user/#{user.username}"
+ 
+                    halt haltCode, response.headers[ responseType ] = responseData
                 end
 
                 get '/api/user/:username' do

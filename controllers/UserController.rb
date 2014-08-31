@@ -9,20 +9,16 @@ class UserController
     attr_accessor :user
 
     def create ( params )
-        if params.empty?
-            raise ArgumentError
-        else
-            @user = User.new
-            generateSalt
-            params.each_pair do |key, value|
-                if value.to_s.empty?
-                    raise "Parameter #{key} is empty"
-                else
-                    assignValues(key, value)
-                end
+        @user = User.new
+        generateSalt
+        params.each_pair do |key, value|
+            if value.to_s.empty?
+                raise "Parameter #{key} is empty"
+            else
+                assignValues(key, value)
             end
-            @user.save
         end
+        @user.save
     end
 
     def retrieve ( username )
@@ -78,8 +74,6 @@ class UserController
                 user = User.where(username: value)
                 if user.empty?
                     @user.username = value
-                else
-                    raise "Username already in use"
                 end
             when "email"
                 @user.email = value
