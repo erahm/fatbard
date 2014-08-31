@@ -15,16 +15,19 @@ module Fatbard
                     username = requestData[:username]
 
                     if userController.retrieve(username) == nil
-
                         userController.create(requestData)
+                        user = userController.user
+                        haltCode = 201
+                        responseData = "/api/user/#{user.username}"
+                        responseType = 'Location'
                     else
-                        haltCode = 400
+                        haltCode = 403
+                        responseType = 'Error'
+                        responseData = 'User already exists'
                     end
 
-                    user = userController.user
-                    haltCode = 201
-                    responseData = "/api/user/#{user.username}" 
-                    halt haltCode, response.headers[ 'Location' ] = responseData
+ 
+                    halt haltCode, response.headers[ responseType ] = responseData
                 end
 
                 get '/api/user/:username' do
