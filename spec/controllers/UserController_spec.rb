@@ -11,21 +11,7 @@ describe UserController do
     end
 
     describe '#create' do
-
-        context 'when parameters are empty' do
-            it 'should raise error' do
-                params = {}
-                lambda { @userController.create(params) }.should raise_exception ArgumentError
-            end
-        end
-
-        context 'when a parameter is empty' do
-            it 'should raise error' do
-                params = {:email => "email", :username => ""}
-                lambda { @userController.create(params) }.should raise_error
-            end
-        end
-
+        
         context 'when username parameter is not empty' do
             it 'should assign value to user.username' do
                 params = {:username => 'joebob'}
