@@ -3,11 +3,13 @@ define(
         // Libraries
         "backbone", "underscore",
         // Dependencies
-        "text!vw/main/home.html"
+        "text!vw/login/login.html", "bindings/login/login"
     ],
-    function( Backbone, _, HomeTmpl ){
+    function( Backbone, _, LoginTmpl, LoginBindings ){
         var MainHomeView = Backbone.View.extend({
-            "template": _.template( HomeTmpl ),
+            "template": _.template( LoginTmpl ),
+
+            "events": LoginBindings,
 
             "render": function(){
                 this.$el.html( this.template() );

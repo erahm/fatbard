@@ -3,8 +3,8 @@ define(
         // Libraries
         "backbone",
         // Dependencies
-        "layouts/fatbard", "layouts/main", "views/main/home"],
-    function( Backbone, FatbardLayout, MainLayout, HomeView ){
+        "layouts/fatbard", "layouts/main", "views/login/login"],
+    function( Backbone, FatbardLayout, MainLayout, LoginView ){
         var mod = {};
 
         mod.register = function( rtr ){
@@ -19,7 +19,7 @@ define(
                 layout.render({
                     "construct": {
                         "main": {
-                            "content": HomeView
+                            "content": LoginView
                         }
                     }
                 });
