@@ -1,0 +1,15 @@
+nav ul{
+    @extend .clear;
+}
+
+nav ul li{
+    float: left;
+    margin-right: 1em;
+    padding-right: 0.75em;
+    border-right: 1px solid $struts;
+
+    &:last-of-type{
+        margin-right: 0;
+        border-right: none;
+    }
+}

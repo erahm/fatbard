@@ -1,9 +1,9 @@
-// roughly based on http://paletton.com/#uid=44A0u0kxkC+dMR3niHBCzoAKWdG
+/* Roughly based on: http://paletton.com/#uid=63z0Q0kmquMlMoMi5P5W6f4RaGw */
 
-$primary:       rgba(109, 13,192,1);
-$secondary:     rgba(182,245,  0,1);
-$tertiary:      rgba(255,202,  0,1);
-$complementary: rgba(255,244,  0,1);
+$primary:       rgba( 55,110,159,1);
+$secondary:     rgba(100, 61,167,1);
+$tertiary:      rgba( 97,208, 62,1);
+$complementary: rgba(245,174, 73,1);
 
 $reading: #FFFFFF;
 $standard: darken( $reading, 5 );
@@ -11,15 +11,15 @@ $dark: darken( $reading, 10 );
 $darker: darken( $reading, 30 );
 $darkest: darken( $reading, 75 );
 
-$text-on-dark:      #DCDCDC;
-$text-highlight:    #FFFFFF;
-$text-standard:     #333333;
-$text-on-white:     #000000;
+$text-on-dark: #DCDCDC;
+$text-highlight: #FFFFFF;
+$text-standard: #333333;
+$text-on-white: #000000;
 
-$struts:    #CCCCCC;
+$struts: #CCCCCC;
 
-$error:     #F54C4C;
-$okay:      #90EE90;
-$warning:   #FFEAA8;
-$info:      #57B7E2;
-$clean:     $dark;
+$error: #F54C4C;
+$okay: #90EE90;
+$warning: #FFEAA8;
+$info: #57B7E2;
+$clean: #FFEAA8;

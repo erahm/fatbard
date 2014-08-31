@@ -9,30 +9,3 @@
         border-bottom: 1px solid $error;
     }
 }
-
-.editable{
-    margin: 0.25em 0 1em 0;
-
-    & .editable-value{
-        border-bottom: 1px solid $struts;
-
-        overflow: hidden;
-        white-space: nowrap;
-
-        & > span{
-            display: inline-block;
-            padding: 0.25em;
-        }
-
-        & .editable-controls{
-            padding: 0.25em;
-            width: 1.5em;
-
-            float: left;
-
-            & i{
-                cursor: pointer;
-            }
-        }
-    }
-}

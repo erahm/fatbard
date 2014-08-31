@@ -1,0 +1,40 @@
+table{
+    margin: auto;
+
+    & thead{
+        & tr{
+            background-color: $darker;
+
+            & th{
+                border-bottom: 1px solid $tertiary;
+                padding: 0.5em 0.75em;
+            }
+        }
+    }
+
+    & tbody{
+        text-align: center;
+
+        & td{
+            border-right: 1px solid $struts;
+            padding: 0.5em 0.75em;
+
+            &:last-of-type{
+                border-right: none;
+            }
+        }
+    }
+
+    & tfoot{
+        text-align: center;
+
+        & tr{
+            background-color: $darker;
+
+            & td{
+                border-top: 1px solid $tertiary;
+                padding: 0.5em 0.75em;
+            }
+        }
+    }
+}

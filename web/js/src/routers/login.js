@@ -1,42 +1,34 @@
 define(
-    ["routers/base", "controllers/login"],
-    function( Base, Controller ){
-        var Login = function( data ){
-                this.data = data;
-                this.dmz = true;
-                this.blacklist = [ "home" ];
-            },
-            page = new Controller();
+    ["layouts/fatbard", "layouts/main", "views/main/home", "views/login/enroll"],
+    function( FatbardLayout, MainLayout, LoginView, EnrollView ){
+        var mod = {};
 
-        Login.prototype = new Base();
+        mod.register = function( rtr ){
+            rtr.get( /\/login(\/)?$/, function(){
+                var layout = new FatbardLayout({"main": MainLayout});
 
-        Login.prototype.register = function(){
-            this.registerHome( this.data );
-        };
-
-        Login.prototype.registerHome = function( data ){
-            var self = this;
-
-            data.sammy.before( "#/", function( context ){
-                return self.filter(
-                    function(){
-                        context.redirect( "#/dashboard/" );
-                        return false;
-                    },
-                    undefined,
-                    "home"
-                );
+                layout.render({
+                    "construct": {
+                        "main": {
+                            "content": LoginView
+                        }
+                    }
+                });
             });
 
-            data.sammy.get( "#/", function( context ){
-                page.home( data );
-            });
+            rtr.get( /\/login\/enroll(\/)?$/, function(){
+                var layout = new FatbardLayout({"main": MainLayout});
 
-            data.sammy.get( "#/login/enroll", function( context ){
-                page.enroll( data );
+                layout.render({
+                    "construct": {
+                        "main": {
+                            "content": EnrollView
+                        }
+                    }
+                });
             });
         };
 
-        return Login;
+        return mod;
     }
 );

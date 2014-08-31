@@ -137,12 +137,8 @@ body{
     color: $text-standard;
 }
 
-.clear:before,
-.clear:after{
-    content: " ";
-    display: table;
-}
-
-.clear:after{
-    clear: both;
+.clear:after {
+    content:"";
+    display:table;
+    clear:both;
 }

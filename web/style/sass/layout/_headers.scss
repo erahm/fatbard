@@ -1,13 +1,10 @@
-body > header{
+header{
     background-color: $dark;
-
+    padding: 1em;
     margin: auto auto 1.5em;
-    min-width: $application-min-width;
-    height: 5em;
 
     h1, h2, h3, h4, h5, h6{
         text-align: center;
-        color: $text-highlight;
     }
 
     img{
@@ -18,12 +15,21 @@ body > header{
     }
 }
 
+section{
+    > h1{
+        text-align: left;
+        padding: 0.25em 0.25em 0 0.25em;
+        background-color: $dark;
+    }
+
+    h1 + hr{
+        margin: -1em 0 1em;
+    }
+}
+
 #logo-container{
     @include border-radius( 0.25em );
     padding: 0.5em 1em;
-    margin: 1em;
-    float: left;
-
     background-color: make-dull( $primary );
     color: $text-on-dark;
 
@@ -33,28 +39,12 @@ body > header{
     }
 
     cursor: pointer;
+    float: left;
 }
 
 #account-container{
-    height: 100%;
-    padding: 0.5em 1em;
-    margin: 0;
+    @extend #logo-container;
+
     float: right;
-
-    background-color: make-dull( $primary );
-    color: $text-on-dark;
-
-    line-height: 4em;
-    vertical-align: middle;
-
-    span, i{
-        vertical-align: middle;
-        display: inline-block;
-    }
-
     cursor: default;
-}
-
-.aux-view-hdr{
-    margin-bottom: 1.5em;
 }

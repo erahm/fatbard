@@ -1,0 +1,62 @@
+// Grid layout taken nearly verbatim from
+// http://css-tricks.com/dont-overthink-it-grids/
+
+.grid {
+    margin: 0 0 $grid-padding 0;
+
+    &:after {
+        @extend .clear;
+    }
+}
+
+[class*='col-'] {
+    float: left;
+    padding-right: $grid-padding;
+    .grid &:last-of-type {
+        padding-right: 0;
+    }
+}
+
+.col-2-3 {
+    width: percentage( 2/3 );
+}
+
+.col-1-3 {
+    width: percentage( 1/3 );
+}
+
+.col-1-2 {
+    width: percentage( 1/2 );
+}
+
+.col-1-4 {
+    width: percentage( 1/4 );
+}
+
+.col-1-8 {
+    width: percentage( 1/8 );
+}
+
+.col-1-5{
+    width: percentage( 1/5 );
+}
+
+.col-2-5{
+    width: percentage( 2/5 );
+}
+
+.col-3-5{
+    width: percentage( 3/5 );
+}
+
+.col-4-5{
+    width: percentage( 4/5 );
+}
+
+/* Opt-in outside padding */
+.grid-pad {
+    padding: $grid-padding 0 $grid-padding $grid-padding;
+    [class*='col-']:last-of-type {
+        padding-right: $grid-padding;
+    }
+}

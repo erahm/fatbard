@@ -20,7 +20,10 @@
   ],
   "dependencies": {
     "underscore": "~1.6.0",
+    "backbone": "~1.1.2",
+    "backbone.localstorage": "~1.1.9",
     "require": "requirejs#~2.1.14",
+    "requirejs-text": "~2.0.12",
     "sammy": "~0.7.5",
     "jquery": "~2.1.0",
     "font-awesome": "~4.1.0",

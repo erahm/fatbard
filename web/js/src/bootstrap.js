@@ -1,54 +1,38 @@
 requirejs.config({
     "urlArgs": "_=" + (new Date()).getTime(),
-    "paths":{
-        "lib":          "../../vendor",
+    "paths": {
+        // SHORTCUTS
+        "vw":                   "../../content/templates/views",
+        "lyt":                  "../../content/templates/layouts",
+        "slug":                 "../../content/slugs",
 
-        "jquery":       ["//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min", "../../vendor/jquery/jquery.min"],
-        "sammy":        "../../vendor/sammy/sammy",
-        "underscore":   "../../vendor/underscore/underscore",
-        "moment":       "../../vendor/moment/moment",
-        "cookies":      "../../vendor/cookies/src/cookies.min",
-        "backbone":     "../../vendor/backbone/backbone"
+        // LIBRARIES
+        "backbone":             "../../vendor/backbone/backbone",
+        "underscore":           "../../vendor/underscore/underscore",
+        "sammy":                "../../vendor/sammy/sammy",
+        "jquery":               ["//ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery", "../../vendor/jquery/jquery"],
+
+        // LIBRARY PLUGINS
+        "text":                 "../../vendor/requirejs-text/text",
+        "localstorage":         "../../vendor/backbone.localstorage/backbone.localStorage"
     },
-    "shim":{
-        "sammy":{
-            "deps": ["jquery"]
-        }
-    },
-    "config":{
-        "config":{
-            "application":{
-                "name": "Fatbard"
-            },
-            "routers":[
-                "error",
-                "login",
-                "profile"
-            ],
-            "events":[
-                "header",
-                "login",
-                "profile"
-            ]
+    "shim": {
+        "backbone": {
+            "exports": "Backbone"
+        },
+        "underscore": {
+            "exports": "_"
         }
     }
 });
 
-console.log( "before app" );
-console.log( window );
+window.fatbard = {
+    "channels": {}
+};
 
 require(
-    ["jquery", "init", "config"],
-    function( $, Init, Config ){
-        console.log( "before doc ready" );
-        console.log( window );
-        console.log( Config );
-
-        $(function(){
-            console.log( "doc ready" );
-            console.log( window );
-            console.log( Config );
-            Init.startApp();
-        });
+    ["routes"],
+    function( Routes ){
+        Routes.startup();
     }
 );

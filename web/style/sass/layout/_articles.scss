@@ -9,8 +9,7 @@ article{
     background-color: $standard;
 
     @include respond-to( medium ){
-        width: 99%;
-        max-width: $application-width;
+        width: 60%
     }
 
     @include respond-to( small ){
