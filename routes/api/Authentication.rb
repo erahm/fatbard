@@ -18,6 +18,7 @@ module Fatbard
                     if isAuthed
                         haltCode = 200
                         returnData = "{}"
+                        session[:userId] = userController.user._id
                     else
                         haltCode = 401
                         returnData = nil

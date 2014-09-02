@@ -30,12 +30,7 @@ describe 'Authentication' do
                 end
 
                 it 'should return 200' do
-                    post '/api/user', {
-                        username: 'george',
-                        email: 'email@email.com',
-                        firstName: 'first name',
-                        password: 'password'
-                    }
+                    post '/api/user', buildValidUser
 
                     post '/api/authenticate/george', {
                         password: 'password'
@@ -43,6 +38,26 @@ describe 'Authentication' do
 
                     last_response.status.should == 200
                 end
+
+                it 'should set userId in the session' do
+                    post '/api/user', buildValidUser
+
+                    post '/api/authenticate/george', {
+                        password: 'password'
+                    }
+
+                    session[:userId].should_not be_nil
+                end
             end
     end
+end
+
+private
+def buildValidUser
+    return {
+        username: 'george',
+        email: 'email@email.com',
+        firstName: 'first name',
+        password: 'password'
+    }
 end

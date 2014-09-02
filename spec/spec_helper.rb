@@ -19,3 +19,7 @@ require 'database_cleaner'
 RSpec.configure do |config|
   config.include Mongoid::Matchers
 end
+
+def session
+  last_request.env['rack.session']
+end
