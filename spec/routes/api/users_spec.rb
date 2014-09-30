@@ -79,7 +79,9 @@ describe 'Users' do
                         password: 'password',
                         email: 'email@email.com'
                     )
+
                     User.stub(:where).with(username: fakeUser.username).and_return([fakeUser])
+                    session[:userId] = fakeUser._id
 
                     patch "/api/user/#{fakeUser.username}", {
                         firstName: 'name'
@@ -100,7 +102,7 @@ describe 'Users' do
                         _id: fakeUser._id,
                         username: fakeUser.username,
                         email: fakeUser.email,
-                        firstName: 'name'
+                        firstName: 'first name'
                     }}.to_json
                     User.stub(:where).with(username: fakeUser.username).and_return([fakeUser])
 
