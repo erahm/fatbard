@@ -53,17 +53,17 @@ module Fatbard
 
                     responseData = nil
 
-                    begin
-                        userController.update(params[:username], requestData)
-                    rescue => error
-                        haltCode = 409 if error.to_s == "Username already in use"
-                    end
+                    user = userController.retrieve(params[:username])
 
                     if userController.user == nil
                         haltCode = 404
+                    elsif session[:userId] != userController.user._id
+                        haltCode = 409
+                        responseData = 'username already in use'     
                     else
+                        userController.update(params[:username], requestData)
                         haltCode = 200
-                        responseData = { user: filterUser(userController.user) }.to_json
+                        responseData = { user: filterUser(userController.user) }.to_json                   
                     end
 
                     halt haltCode, responseData
