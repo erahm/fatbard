@@ -30,7 +30,7 @@ class UserController
             @user = user.first
         end
 
-        return @user
+        @user
     end
 
     def update ( username, params )
@@ -64,7 +64,7 @@ class UserController
             retval = true
         end
         
-        return retval
+        retval
     end
 
      protected
@@ -86,7 +86,7 @@ class UserController
 
      protected
      def hashPassword ( password )
-        return PBKDF2.new do |p|
+        PBKDF2.new do |p|
             p.password = password
             p.salt = @user.salt
             p.iterations = 10000

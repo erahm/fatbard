@@ -93,7 +93,7 @@ module Fatbard
 
                 protected
                 def filterUser ( user )
-                    return {
+                    {
                         :_id => user['_id'],
                         :username => user['username'],
                         :email => user['email'],

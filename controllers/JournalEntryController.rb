@@ -15,7 +15,7 @@ class JournalEntryController
             @journalEntry = journalEntry.first
         end
 
-        return @journalEntry
+        @journalEntry
     end
 
     def create ( params )

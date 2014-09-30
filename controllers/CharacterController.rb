@@ -15,6 +15,6 @@ class CharacterController
                 @character = character.first
             end
 
-            return @character
+            @character
         end
 end

@@ -15,12 +15,12 @@ class CampaignController
             @campaign = campaign.first
         end
 
-        return @campaign
+        @campaign
     end
 
     def retrieveJournal ( id )
         retrieve(id)
 
-        return @campaign.journal
+        @campaign.journal
     end
 end
